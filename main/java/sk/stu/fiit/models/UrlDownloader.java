@@ -6,12 +6,15 @@
 package sk.stu.fiit.models;
 
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,10 +22,10 @@ import java.util.logging.Logger;
  */
 public class UrlDownloader {
     
-    public void download(String urlSpec, String path) throws MalformedURLException, IOException{
+    public void download(String urlSpec) throws MalformedURLException, IOException{
         URL objUrl = new URL(urlSpec);
-        System.out.println("objUrl = " + objUrl.getAuthority());
-        System.out.println("chomidopici");
+        String path = getPath(urlSpec);
+        
         try (BufferedInputStream inputStream = new BufferedInputStream(objUrl.openStream());
   FileOutputStream fileOS = new FileOutputStream(path)) {
             byte data[] = new byte[1024];
@@ -33,12 +36,44 @@ public class UrlDownloader {
         }
     }
     
+    private String getDefaultName(String urlSpec) throws MalformedURLException{
+        System.out.println("vytvaram meno");
+        
+        URL fileUri = new URL(urlSpec);    
+        int startIndex = fileUri.toString().lastIndexOf('/');
+        String fileName = fileUri.toString().substring(startIndex + 1);
+        return fileName;
+    }
+    
+    private String getPath(String urlSpec) throws MalformedURLException{
+        
+        
+        String path = System.getProperty("user.home") + "\\" +  getDefaultName(urlSpec);
+        System.out.println("path = " + path);
+        
+        String defaultFileName = getDefaultName(urlSpec);
+        File defaultFile = new File(path + defaultFileName);
+        
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(defaultFile);
+        
+        int result = fileChooser.showOpenDialog(null);
+        
+        if (result == JFileChooser.APPROVE_OPTION) {
+            path = fileChooser.getSelectedFile().getAbsolutePath();
+        }
+        
+        return path;
+    }
+    
     public static void main(String[] args) {
         UrlDownloader objDownloader = new UrlDownloader();
-        String path = "C:\\Users\\42194\\OneDrive - Slovenská technická univerzita v Bratislave\\2020-2021\\LS_4\\VAVA\\projekt\\Downloader\\download.pdf";
-        String url = "https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf";
+        String url = JOptionPane.showInputDialog("Zadajte link");
+        
+        
         try {
-            objDownloader.download(url, path);
+            objDownloader.download(url);
+            JOptionPane.showMessageDialog(null, "subor bol uspesne stiahnuty");
         } catch (IOException ex) {
             Logger.getLogger(UrlDownloader.class.getName()).log(Level.SEVERE, null, ex);
         }
