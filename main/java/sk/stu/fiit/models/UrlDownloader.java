@@ -37,27 +37,22 @@ public class UrlDownloader {
     }
     
     private String getDefaultName(String urlSpec) throws MalformedURLException{
-        System.out.println("vytvaram meno");
         
         URL fileUri = new URL(urlSpec);    
         int startIndex = fileUri.toString().lastIndexOf('/');
         String fileName = fileUri.toString().substring(startIndex + 1);
+        System.out.println("fileName = " + fileName);
         return fileName;
     }
     
     private String getPath(String urlSpec) throws MalformedURLException{
         
-        
-        String path = System.getProperty("user.home") + "\\" +  getDefaultName(urlSpec);
-        System.out.println("path = " + path);
-        
-        String defaultFileName = getDefaultName(urlSpec);
-        File defaultFile = new File(path + defaultFileName);
+        String path = System.getProperty("user.home");
+        File defaultFile = new File(path + "\\" + getDefaultName(urlSpec));
         
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(defaultFile);
-        
-        int result = fileChooser.showOpenDialog(null);
+        fileChooser.setSelectedFile(defaultFile);
+        int result = fileChooser.showSaveDialog(null);
         
         if (result == JFileChooser.APPROVE_OPTION) {
             path = fileChooser.getSelectedFile().getAbsolutePath();
@@ -69,7 +64,6 @@ public class UrlDownloader {
     public static void main(String[] args) {
         UrlDownloader objDownloader = new UrlDownloader();
         String url = JOptionPane.showInputDialog("Zadajte link");
-        
         
         try {
             objDownloader.download(url);
