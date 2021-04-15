@@ -38,7 +38,7 @@ public class Downloader extends Thread{
     public int getDownloaderId() {
         return id;
     }
-
+    
     @Override
     public void run() {
         try (BufferedInputStream inputStream = new BufferedInputStream(source.openStream());
@@ -60,13 +60,10 @@ public class Downloader extends Thread{
     }
     
     public void pauseDownloading() throws InterruptedException{
-        System.out.println("pauzujem");
         running = false;
-        sleep(10000);
     }
     
     public void resumeDownloading(){
-        System.out.println("resumujem");
         running = true;
     }
     
