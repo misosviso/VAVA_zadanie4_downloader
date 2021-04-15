@@ -48,14 +48,6 @@ public class DownloadManager{
         DownloadProgressChecker objChecker = new DownloadProgressChecker(pathString, objDownloader, urlString);
         objDownloader.start(); 
         objChecker.start();
-        try {
-            objDownloader.pauseDownloading();
-            objDownloader.resumeDownloading();
-        } catch (InterruptedException ex) {
-            JOptionPane.showMessageDialog(null, "Nevydalo");
-        }
-
-       
     }
     
     private int generateID(){

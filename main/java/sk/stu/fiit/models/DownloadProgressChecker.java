@@ -23,6 +23,7 @@ public class DownloadProgressChecker extends Thread{
     private final File destination;
     private final Downloader objDownloader;
     private int totalLength = 0;
+    private int downloaded = 0;
 
     public DownloadProgressChecker(String strDestination, Downloader objDownloader, String urlSpec) throws IOException {
         this.objDownloader = objDownloader;
@@ -32,15 +33,19 @@ public class DownloadProgressChecker extends Thread{
         this.totalLength = conn.getContentLength();
     }
     
-    
+    private void uploadDownloaded() throws IOException{
+        if(destination.exists()){
+            this.downloaded = (int) (Files.size(Paths.get(destination.getAbsolutePath()))/1024);
+        }
+    }
     
     @Override
     public void run() {
         while(objDownloader.isAlive()){
             try {
-                int downloaded = (int) (Files.size(Paths.get(destination.getAbsolutePath()))/1024);
-                System.out.println("downloaded: " + downloaded + "/" + totalLength/1024 + "kB");
-                sleep(5000);
+                uploadDownloaded();
+                System.out.println(destination.getName() + " - downloaded: " + downloaded + "/" + totalLength/1024 + "kB");
+                sleep(2500);
             } catch (IOException ex) {
                 Logger.getLogger(DownloadProgressChecker.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InterruptedException ex) {

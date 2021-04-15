@@ -20,11 +20,15 @@ public class Main {
     public static void main(String[] args){
         
         DownloadManager downloadManager = DownloadManager.getDownloadManager();
-        String urlString = JOptionPane.showInputDialog("Zadajte url adresu:");
-        String pathString;
+        String urlString1 = JOptionPane.showInputDialog("Zadajte url adresu:");
+        String urlString2 = JOptionPane.showInputDialog("Zadajte url adresu:");
+        String pathString1;
+        String pathString2;
         try {
-            pathString = DestinationResolver.getPath(urlString);
-            downloadManager.createDownloader(urlString, pathString);
+            pathString1 = DestinationResolver.getPath(urlString1);
+            pathString2 = DestinationResolver.getPath(urlString2);
+            downloadManager.createDownloader(urlString1, pathString1);
+            downloadManager.createDownloader(urlString2, pathString2);
         } catch (MalformedURLException ex) {
             JOptionPane.showMessageDialog(null, "neplatná adresa");
             return;
