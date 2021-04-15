@@ -7,13 +7,8 @@ package sk.stu.fiit.models;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  * Singleton class, which is holds information about all downloads
@@ -40,9 +35,15 @@ public class DownloadManager{
      */
     private DownloadManager() {}
     
-    public void createDownloader(String urlString, String pathString) throws MalformedURLException, IOException{
+    /**
+     * start new download
+     * @param urlString
+     * @param pathString
+     * @throws MalformedURLException
+     * @throws IOException 
+     */
+    public void startDownloading(String urlString, String pathString) throws MalformedURLException, IOException{
         int ID = generateID();
-        
         
         Downloader objDownloader = new Downloader(ID, urlString, pathString);
         DownloadProgressChecker objChecker = new DownloadProgressChecker(pathString, objDownloader, urlString);

@@ -7,19 +7,15 @@ package sk.stu.fiit.models;
 
 import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Class which is responsible for downloading file from URL address
  * @author Admin
  */
 public class Downloader extends Thread{
@@ -29,9 +25,16 @@ public class Downloader extends Thread{
     private final File destination;
     private volatile boolean running = true;
 
-    public Downloader(int id, String source, String strDestination) throws MalformedURLException{
+    /**
+     * Constructor
+     * @param id ID of downloading task
+     * @param strSource URL address
+     * @param strDestination path to the destination file
+     * @throws MalformedURLException if the user given URL is not valid
+     */
+    public Downloader(int id, String strSource, String strDestination) throws MalformedURLException{
         this.id = id;
-        this.source = new URL(source);
+        this.source = new URL(strSource);
         this.destination = new File(strDestination);
     }
 
@@ -65,6 +68,14 @@ public class Downloader extends Thread{
     
     public void resumeDownloading(){
         running = true;
+    }
+    
+    public void stopDownloading(){
+        // sem by sa dalo dat len kill thread s tym ze by sa nejako serializovala tato trieda
+    }
+    
+    public void resumeDOwnloading2(){
+        // tuto by sa mohol spustit thread odtial kde skoncil
     }
     
 }
