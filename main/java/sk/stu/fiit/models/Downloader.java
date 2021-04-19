@@ -24,6 +24,8 @@ public class Downloader extends Thread{
     private final URL source;
     private final File destination;
     private volatile boolean running = true;
+    private int totalLength = 0;
+    private int downloaded = 0;
 
     /**
      * Constructor
@@ -32,10 +34,11 @@ public class Downloader extends Thread{
      * @param strDestination path to the destination file
      * @throws MalformedURLException if the user given URL is not valid
      */
-    public Downloader(int id, String strSource, String strDestination) throws MalformedURLException{
+    public Downloader(int id, String strSource, String strDestination) throws MalformedURLException, IOException{
         this.id = id;
         this.source = new URL(strSource);
         this.destination = new File(strDestination);
+        this.totalLength = source.openConnection().getContentLength();
     }
 
     public int getDownloaderId() {
@@ -50,6 +53,7 @@ public class Downloader extends Thread{
             int byteContent;
             while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
                 fileOS.write(data, 0, byteContent);
+                downloaded += byteContent;
                 while(!running){
                    Downloader.yield();
                    sleep(1000);
@@ -61,6 +65,15 @@ public class Downloader extends Thread{
             Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, "Interrupted", ex);
         }
     }
+
+    public int getDownloaded() {
+        return downloaded;
+    }
+    
+    public int getTotalLength() {
+        return totalLength;
+    }
+    
     
     public void pauseDownloading() throws InterruptedException{
         running = false;
@@ -77,5 +90,6 @@ public class Downloader extends Thread{
     public void resumeDOwnloading2(){
         // tuto by sa mohol spustit thread odtial kde skoncil
     }
+
     
 }
