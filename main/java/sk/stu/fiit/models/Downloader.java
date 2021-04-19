@@ -7,10 +7,16 @@ package sk.stu.fiit.models;
 
 import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,7 +24,7 @@ import java.util.logging.Logger;
  * Class which is responsible for downloading file from URL address
  * @author Admin
  */
-public class Downloader extends Thread{
+public class Downloader extends Thread implements Serializable{
 
     private final int id;
     private final URL source;
@@ -26,6 +32,9 @@ public class Downloader extends Thread{
     private volatile boolean running = true;
     private int totalLength = 0;
     private int downloaded = 0;
+    
+    
+    public byte lastData[];
 
     /**
      * Constructor
@@ -47,12 +56,14 @@ public class Downloader extends Thread{
     
     @Override
     public void run() {
+        System.out.println("downloaded = " + downloaded / 1024);
         try (BufferedInputStream inputStream = new BufferedInputStream(source.openStream());
         FileOutputStream fileOS = new FileOutputStream(this.destination);) {
             byte data[] = new byte[1024];
             int byteContent;
             while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
                 fileOS.write(data, 0, byteContent);
+                lastData = data;
                 downloaded += byteContent;
                 while(!running){
                    Downloader.yield();
@@ -74,21 +85,39 @@ public class Downloader extends Thread{
         return totalLength;
     }
     
+//    public void pauseDownloading() throws InterruptedException{
+//        running = false;
+//    }
+//    
+//    public void resumeDownloading(){
+//        running = true;
+//    }
     
-    public void pauseDownloading() throws InterruptedException{
-        running = false;
+    public void pauseDownloading() throws IOException{
+        System.out.println("Prerusujem, serializujem");
+        interrupt();
+        serialize();
     }
     
-    public void resumeDownloading(){
-        running = true;
+    public void serialize() throws IOException{
+        String filename = "pausedDownloads.txt";
+        File objSerializationFile = new File(filename);
+        
+        try (FileOutputStream fileOutputStream = new FileOutputStream(objSerializationFile); 
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+            objectOutputStream.writeObject(this);
+        }
     }
     
-    public void stopDownloading(){
-        // sem by sa dalo dat len kill thread s tym ze by sa nejako serializovala tato trieda
-    }
-    
-    public void resumeDOwnloading2(){
-        // tuto by sa mohol spustit thread odtial kde skoncil
+    public static Downloader loadPaused() throws IOException{
+        String filename = "pausedDownloads.txt";
+        File objSerializationFile = new File(filename);
+        
+        try (FileInputStream fileInputStream = new FileInputStream(objSerializationFile); ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
+            return (Downloader) objectInputStream.readObject();
+        } catch (ClassNotFoundException ex) {
+            return null;
+        }
     }
 
     

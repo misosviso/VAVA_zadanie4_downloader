@@ -6,15 +6,19 @@
 package sk.stu.fiit.models;
 
 import java.io.IOException;
+import static java.lang.Thread.sleep;
 import java.net.MalformedURLException;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Singleton class, which is holds information about all downloads
  * @author Admin
  */
-public class DownloadManager{
+public class DownloadManager extends Thread{
 
     /**
      * Factory for getting instance of DownloadManager
@@ -46,9 +50,19 @@ public class DownloadManager{
         int ID = generateID();
         
         Downloader objDownloader = new Downloader(ID, urlString, pathString);
-        DownloadProgressChecker objChecker = new DownloadProgressChecker(pathString, objDownloader, urlString);
         objDownloader.start(); 
-        objChecker.start();
+        new DownloadProgressChecker(pathString, objDownloader, urlString).start();
+        
+        try {
+            System.out.println("objDownloader = " + Arrays.toString(objDownloader.lastData));
+            objDownloader.pauseDownloading();
+            sleep(10000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(DownloadManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        Downloader.loadPaused().start();
+        new DownloadProgressChecker(pathString, objDownloader, urlString).start();
     }
     
     private int generateID(){

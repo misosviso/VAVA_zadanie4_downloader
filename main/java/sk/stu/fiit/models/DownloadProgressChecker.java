@@ -7,6 +7,7 @@ package sk.stu.fiit.models;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,6 +30,7 @@ public class DownloadProgressChecker extends Thread{
         while(objDownloader.isAlive()){
             try {
                 System.out.println(destination.getName() + " - downloaded: " + objDownloader.getDownloaded()/1024 + "/" +  objDownloader.getTotalLength()/1024 + "kB");
+                //System.out.println(Arrays.toString(objDownloader.lastData));
                 sleep(2500);
             } catch (InterruptedException ex) {
                 Logger.getLogger(DownloadProgressChecker.class.getName()).log(Level.SEVERE, null, ex);

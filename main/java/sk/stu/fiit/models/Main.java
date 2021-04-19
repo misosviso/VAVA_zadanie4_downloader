@@ -19,12 +19,12 @@ public class Main {
         
         DownloadManager downloadManager = DownloadManager.getDownloadManager();
         String urlString1 = JOptionPane.showInputDialog("Zadajte url adresu:");
-        String urlString2 = JOptionPane.showInputDialog("Zadajte url adresu:");
+        // String urlString2 = JOptionPane.showInputDialog("Zadajte url adresu:");
         try {
             String pathString1 = DestinationResolver.getPath(urlString1);
-            String pathString2 = DestinationResolver.getPath(urlString2);
+            // String pathString2 = DestinationResolver.getPath(urlString2);
             downloadManager.startDownloading(urlString1, pathString1);
-            downloadManager.startDownloading(urlString2, pathString2);
+            // downloadManager.startDownloading(urlString2, pathString2);
         } catch (MalformedURLException ex) {
             JOptionPane.showMessageDialog(null, "Neplatná adresa");
         } catch (IOException ex) {
