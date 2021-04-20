@@ -25,7 +25,7 @@ public class Downloader extends Thread implements Serializable{
     private final URL source;
     private final File destination;
     private volatile boolean running = true;
-    private int totalLength = 0;
+    private int totalSize = 0;
     private int downloaded = 0;
     
     /**
@@ -39,7 +39,7 @@ public class Downloader extends Thread implements Serializable{
         this.id = id;
         this.source = new URL(strSource);
         this.destination = new File(strDestination);
-        this.totalLength = source.openConnection().getContentLength();
+        this.totalSize = source.openConnection().getContentLength();
     }
 
     public int getDownloaderId() {
@@ -53,7 +53,7 @@ public class Downloader extends Thread implements Serializable{
         FileOutputStream fileOS = new FileOutputStream(destination);) {
             byte data[] = new byte[1024];
             int byteContent;
-            while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
+            while ((byteContent = inputStream.read(data, 0, 1024)) != -1 && !isInterrupted()) {
                 downloaded += byteContent;
                 fileOS.write(data, 0, byteContent);
                 while(!running){
@@ -74,8 +74,8 @@ public class Downloader extends Thread implements Serializable{
         return downloaded;
     }
     
-    public int getTotalLength() {
-        return totalLength;
+    public int getTotalSize() {
+        return totalSize;
     }
     
     public void pauseDownloading() throws InterruptedException{
