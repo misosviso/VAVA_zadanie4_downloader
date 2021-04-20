@@ -7,16 +7,11 @@ package sk.stu.fiit.models;
 
 import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,9 +28,6 @@ public class Downloader extends Thread implements Serializable{
     private int totalLength = 0;
     private int downloaded = 0;
     
-    
-    public byte lastData[];
-
     /**
      * Constructor
      * @param id ID of downloading task
@@ -53,28 +45,29 @@ public class Downloader extends Thread implements Serializable{
     public int getDownloaderId() {
         return id;
     }
-    
+   
     @Override
     public void run() {
-        System.out.println("downloaded = " + downloaded / 1024);
+        
         try (BufferedInputStream inputStream = new BufferedInputStream(source.openStream());
-        FileOutputStream fileOS = new FileOutputStream(this.destination);) {
+        FileOutputStream fileOS = new FileOutputStream(destination);) {
             byte data[] = new byte[1024];
             int byteContent;
             while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
-                fileOS.write(data, 0, byteContent);
-                lastData = data;
                 downloaded += byteContent;
+                fileOS.write(data, 0, byteContent);
                 while(!running){
-                   Downloader.yield();
-                   sleep(1000);
+                    Downloader.yield();
+                    sleep(5000);
                 }
             }
+            
         } catch (IOException ex) {
             Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, "Nepodarilo sa zapisovat do suporu", ex);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, "Interrupted", ex);
+            Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, "Thread downloadera bol preruseny", ex);
         }
+        System.out.println("Breakol sa downloader loop");
     }
 
     public int getDownloaded() {
@@ -85,40 +78,14 @@ public class Downloader extends Thread implements Serializable{
         return totalLength;
     }
     
-//    public void pauseDownloading() throws InterruptedException{
-//        running = false;
-//    }
-//    
-//    public void resumeDownloading(){
-//        running = true;
-//    }
-    
-    public void pauseDownloading() throws IOException{
-        System.out.println("Prerusujem, serializujem");
-        interrupt();
-        serialize();
-    }
-    
-    public void serialize() throws IOException{
-        String filename = "pausedDownloads.txt";
-        File objSerializationFile = new File(filename);
-        
-        try (FileOutputStream fileOutputStream = new FileOutputStream(objSerializationFile); 
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
-            objectOutputStream.writeObject(this);
-        }
-    }
-    
-    public static Downloader loadPaused() throws IOException{
-        String filename = "pausedDownloads.txt";
-        File objSerializationFile = new File(filename);
-        
-        try (FileInputStream fileInputStream = new FileInputStream(objSerializationFile); ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-            return (Downloader) objectInputStream.readObject();
-        } catch (ClassNotFoundException ex) {
-            return null;
-        }
+    public void pauseDownloading() throws InterruptedException{
+        System.out.println("Prerusujem");
+        running = false;
     }
 
+    public void resumeDownloading() {
+        System.out.println("Obnovujem");
+        running = true;
+    }
     
 }

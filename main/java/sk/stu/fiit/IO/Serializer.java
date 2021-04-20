@@ -11,26 +11,27 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import sk.stu.fiit.models.DownloadManager;
 import sk.stu.fiit.models.Downloader;
 
 /**
  *
  * @author Admin
  */
-public class DownloaderSerializer {
+public class Serializer {
     
-    public static void serialize(Downloader downloader) throws IOException{
-        String filename = "pausedDownloads.txt";
+    public static void serialize(DownloadManager objDM) throws IOException{
+        String filename = "downloaderManager.txt";
         File objSerializationFile = new File(filename);
         
         try (FileOutputStream fileOutputStream = new FileOutputStream(objSerializationFile); 
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
-            objectOutputStream.writeObject(downloader);
+            objectOutputStream.writeObject(objDM);
         }
     }
     
-    public static Downloader loadPaused(int ID_Downloader) throws IOException{
-        String filename = "pausedDownloads.txt";
+    public static Downloader load(int ID_Downloader) throws IOException{
+        String filename = "downloader" + ID_Downloader + ".txt";
         File objSerializationFile = new File(filename);
         
         try (FileInputStream fileInputStream = new FileInputStream(objSerializationFile); ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
@@ -44,5 +45,8 @@ public class DownloaderSerializer {
             return null;
         }
     }
+    
+    
+ 
     
 }

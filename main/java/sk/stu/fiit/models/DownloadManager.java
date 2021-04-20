@@ -6,19 +6,18 @@
 package sk.stu.fiit.models;
 
 import java.io.IOException;
+import java.io.Serializable;
 import static java.lang.Thread.sleep;
 import java.net.MalformedURLException;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import sk.stu.fiit.IO.Serializer;
 
 /**
  * Singleton class, which is holds information about all downloads
  * @author Admin
  */
-public class DownloadManager extends Thread{
+public class DownloadManager extends Thread implements Serializable{
 
     /**
      * Factory for getting instance of DownloadManager
@@ -31,6 +30,7 @@ public class DownloadManager extends Thread{
         return instanceOfSelf;
     }
     
+    private int lastIndex = 0;
     private final List<Downloader> downloads = new LinkedList<>();
     private static DownloadManager instanceOfSelf = null;
 
@@ -46,27 +46,23 @@ public class DownloadManager extends Thread{
      * @throws MalformedURLException
      * @throws IOException 
      */
-    public void startDownloading(String urlString, String pathString) throws MalformedURLException, IOException{
-        int ID = generateID();
+    
+    public Downloader startDownloading(String urlString, String pathString) throws MalformedURLException, IOException{
+        int ID = lastIndex++;
         
         Downloader objDownloader = new Downloader(ID, urlString, pathString);
+        this.downloads.add(objDownloader);
         objDownloader.start(); 
-        new DownloadProgressChecker(pathString, objDownloader, urlString).start();
+        return objDownloader;
         
-        try {
-            System.out.println("objDownloader = " + Arrays.toString(objDownloader.lastData));
-            objDownloader.pauseDownloading();
-            sleep(10000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(DownloadManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        Downloader.loadPaused().start();
-        new DownloadProgressChecker(pathString, objDownloader, urlString).start();
     }
     
-    private int generateID(){
-        return downloads.size();
+    public void pauseDownloading(int ID) throws InterruptedException, IOException{
+        getSpecificDownloader(ID).pauseDownloading();
+    }
+    
+    public void resumeDownloading(int ID) throws InterruptedException, IOException{
+        getSpecificDownloader(ID).resumeDownloading();
     }
     
     private Downloader getSpecificDownloader(int ID){
@@ -78,7 +74,4 @@ public class DownloadManager extends Thread{
         return null; 
     }
     
-    public void startDownloader(int ID){
-        this.getSpecificDownloader(ID).start();
-    }
 }

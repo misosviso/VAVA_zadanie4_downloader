@@ -5,11 +5,21 @@
  */
 package sk.stu.fiit.views;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import sk.stu.fiit.controllers.DownloadManagerController;
+import sk.stu.fiit.models.DestinationResolver;
+
 /**
  *
  * @author Admin
  */
 public class MainView extends javax.swing.JFrame {
+    
+    private final DownloadManagerController downloadController = new DownloadManagerController();
 
     /**
      * Creates new form InitView
@@ -35,10 +45,14 @@ public class MainView extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         urlTF = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        startDownloadingBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         unzipCB = new javax.swing.JCheckBox();
         openAfterDownloadCB = new javax.swing.JCheckBox();
+        progressBar = new javax.swing.JProgressBar();
+        progressLb = new javax.swing.JLabel();
+        resumeBtn = new javax.swing.JButton();
+        pauseBtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jProgressBar1 = new javax.swing.JProgressBar();
         jProgressBar2 = new javax.swing.JProgressBar();
@@ -82,8 +96,13 @@ public class MainView extends javax.swing.JFrame {
         urlTF.setText("URL");
         jPanel2.add(urlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 160, 30));
 
-        jButton1.setText("Vybrať lokáciu");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 160, -1));
+        startDownloadingBtn.setText("Vybrať lokáciu");
+        startDownloadingBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                startDownloadingBtnMouseReleased(evt);
+            }
+        });
+        jPanel2.add(startDownloadingBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 160, -1));
 
         jLabel2.setText("? estimated time");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 150, -1));
@@ -93,6 +112,26 @@ public class MainView extends javax.swing.JFrame {
 
         openAfterDownloadCB.setText("jCheckBox2");
         jPanel2.add(openAfterDownloadCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
+        jPanel2.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+
+        progressLb.setText("jLabel3");
+        jPanel2.add(progressLb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 150, -1));
+
+        resumeBtn.setText("Resume");
+        resumeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                resumeBtnMouseReleased(evt);
+            }
+        });
+        jPanel2.add(resumeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, -1));
+
+        pauseBtn.setText("Pause");
+        pauseBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                pauseBtnMouseReleased(evt);
+            }
+        });
+        jPanel2.add(pauseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, -1, -1));
 
         jTabbedPane1.addTab("sťahovanie", jPanel2);
 
@@ -133,6 +172,41 @@ public class MainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void startDownloadingBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startDownloadingBtnMouseReleased
+        try {
+            // TODO add your handling code here:
+            String urlString1 = urlTF.getText();
+            String pathString1 = DestinationResolver.getPath(urlString1);
+            this.downloadController.startDownloading(urlString1, pathString1, this.progressBar, this.progressLb);
+        } catch (MalformedURLException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Skontroluj si URL zlaticko");
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(rootPane, "IO chybicka");
+        }
+    }//GEN-LAST:event_startDownloadingBtnMouseReleased
+
+    private void pauseBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pauseBtnMouseReleased
+        try {
+            // TODO add your handling code here:
+            this.downloadController.pauseDownloading(0);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_pauseBtnMouseReleased
+
+    private void resumeBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resumeBtnMouseReleased
+        try {
+            // TODO add your handling code here:
+            this.downloadController.resumeDownloading(0);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_resumeBtnMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -172,7 +246,6 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -189,8 +262,13 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JCheckBox openAfterDownloadCB;
+    private javax.swing.JButton pauseBtn;
+    private javax.swing.JProgressBar progressBar;
+    private javax.swing.JLabel progressLb;
     private javax.swing.JTable recentDOwnloadsTable;
     private javax.swing.JScrollPane recentDownloadsTable;
+    private javax.swing.JButton resumeBtn;
+    private javax.swing.JButton startDownloadingBtn;
     private javax.swing.JCheckBox unzipCB;
     private javax.swing.JTextField urlTF;
     // End of variables declaration//GEN-END:variables
