@@ -178,7 +178,7 @@ public class MainView extends javax.swing.JFrame{
             // TODO add your handling code here:
             String urlString1 = urlTF.getText();
             String pathString1 = DestinationResolver.getPath(urlString1);
-            this.downloadController.startDownloading(urlString1, pathString1, this.progressBar, this.progressLb);
+            this.downloadController.download(urlString1, pathString1, this.progressBar, this.progressLb);
             
         } catch (MalformedURLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Skontroluj si URL zlaticko");

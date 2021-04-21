@@ -51,5 +51,6 @@ public class DownloadProgressChecker extends Thread{
         downloadState[0] = objDownloader.getDownloaded();
         this.view.updateProgress(downloadState);
     }
+
     
 }

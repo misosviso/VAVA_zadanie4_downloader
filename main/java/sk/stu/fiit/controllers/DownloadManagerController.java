@@ -7,8 +7,6 @@ package sk.stu.fiit.controllers;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.Observable;
-import java.util.Observer;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import sk.stu.fiit.models.DownloadManager;
@@ -29,14 +27,18 @@ public class DownloadManagerController{
         this.view = view;
     }
     
-    
-
-    public void startDownloading(String urlString, String pathString,JProgressBar progressBar, JLabel description) throws MalformedURLException, IOException {
-        Downloader objDownloader = downloadManager.startDownloading(urlString, pathString);
+    public void download(String urlString, String pathString,JProgressBar progressBar, JLabel description) throws MalformedURLException, IOException {
+        Downloader objDownloader = downloadManager.download(urlString, pathString);
         DownloadProgressChecker downloadProgressChecker = new DownloadProgressChecker(objDownloader, this.view);
         downloadProgressChecker.start();
-        
     }
+
+    public void downloadAndUnzip(String urlString, String zipFilename, String unzipFilename) throws MalformedURLException, IOException {
+        Downloader objDownloader = downloadManager.downloadAndUnzip(urlString, zipFilename, unzipFilename);
+        DownloadProgressChecker downloadProgressChecker = new DownloadProgressChecker(objDownloader, this.view);
+        downloadProgressChecker.start();
+    }
+    
     
     public void pauseDownloading(int ID) throws InterruptedException, IOException {
         downloadManager.pauseDownloading(ID);
