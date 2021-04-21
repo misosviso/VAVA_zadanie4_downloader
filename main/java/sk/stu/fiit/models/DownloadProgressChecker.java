@@ -5,12 +5,13 @@
  */
 package sk.stu.fiit.models;
 
-import java.io.File;
 import java.io.IOException;
+import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
+import sk.stu.fiit.views.MainView;
 
 /**
  * Class which checks for progress
@@ -18,43 +19,38 @@ import javax.swing.JProgressBar;
  */
 public class DownloadProgressChecker extends Thread{
     
-    private final File destination;
     private final Downloader objDownloader;
-    private JProgressBar progressBar = null;
-    private JLabel description;
+    private final int[] downloadState;
+    private MainView view;
+    private JProgressBar progressBar;
+    private JLabel progressLb;
 
-    public DownloadProgressChecker(String strDestination, Downloader objDownloader, String urlSpec) throws IOException {
+    public DownloadProgressChecker(Downloader objDownloader) throws IOException {
+        this.downloadState = new int[]{0, objDownloader.getTotalSize()};
         this.objDownloader = objDownloader;
-        this.destination = new File(strDestination);
     }
 
-    public DownloadProgressChecker(Downloader objDownloader, String pathString, String urlString, JProgressBar progressBar, JLabel description) {
+    public DownloadProgressChecker(Downloader objDownloader, MainView view) {
         this.objDownloader = objDownloader;
-        this.destination = new File(pathString);
-        this.progressBar = progressBar;
-        this.description = description;
-    }
-    
-    private void displayState(){
-        this.progressBar.setValue(objDownloader.getDownloaded());
-        this.description.setText(objDownloader.getDownloaded() + "/" + objDownloader.getTotalLength() + "B");
+        this.downloadState = new int[]{0, objDownloader.getTotalSize()};
+        this.view = view;
     }
     
     @Override
     public void run() {
-        this.progressBar.setMaximum(objDownloader.getTotalLength());
-        while(objDownloader.isAlive()){
-            try {
-                displayState();
-                sleep(1000);
+        while(objDownloader.isAlive() && !Thread.currentThread().isInterrupted()){
+            try 
+            {
+                downloadState[0] = objDownloader.getDownloaded();
+                this.view.updateProgress(downloadState);
+                sleep(2500);
             } catch (InterruptedException ex) {
                 Logger.getLogger(DownloadProgressChecker.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        displayState();
-        description.setText("Stiahnute");
+        downloadState[0] = objDownloader.getDownloaded();
+        this.view.updateProgress(downloadState);
     }
-    
-    
+
     
 }

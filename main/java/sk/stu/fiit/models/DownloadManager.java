@@ -7,11 +7,10 @@ package sk.stu.fiit.models;
 
 import java.io.IOException;
 import java.io.Serializable;
-import static java.lang.Thread.sleep;
 import java.net.MalformedURLException;
 import java.util.LinkedList;
 import java.util.List;
-import sk.stu.fiit.IO.Serializer;
+import sk.stu.fiit.models.unzipping.Unzipper;
 
 /**
  * Singleton class, which is holds information about all downloads
@@ -43,18 +42,25 @@ public class DownloadManager extends Thread implements Serializable{
      * start new download
      * @param urlString
      * @param pathString
+     * @return 
      * @throws MalformedURLException
      * @throws IOException 
      */
     
-    public Downloader startDownloading(String urlString, String pathString) throws MalformedURLException, IOException{
+    public Downloader download(String urlString, String pathString) throws MalformedURLException, IOException{
         int ID = lastIndex++;
-        
-        Downloader objDownloader = new Downloader(ID, urlString, pathString);
+        Downloader objDownloader = new Downloader(ID, urlString, pathString, this);
         this.downloads.add(objDownloader);
         objDownloader.start(); 
         return objDownloader;
-        
+    }
+    
+    public Downloader downloadAndUnzip(String urlString, String zipFilename, String unzipFilename) throws MalformedURLException, IOException{
+        int ID = lastIndex++;
+        Downloader objDownloader = new Downloader(ID, urlString, zipFilename, this);
+        this.downloads.add(objDownloader);
+        objDownloader.start(); 
+        return objDownloader;
     }
     
     public void pauseDownloading(int ID) throws InterruptedException, IOException{
@@ -73,5 +79,5 @@ public class DownloadManager extends Thread implements Serializable{
         }
         return null; 
     }
-    
+
 }

@@ -12,19 +12,33 @@ import javax.swing.JProgressBar;
 import sk.stu.fiit.models.DownloadManager;
 import sk.stu.fiit.models.DownloadProgressChecker;
 import sk.stu.fiit.models.Downloader;
+import sk.stu.fiit.views.MainView;
 
 /**
  *
  * @author Admin
  */
-public class DownloadManagerController {
+public class DownloadManagerController{
     
     private final DownloadManager downloadManager = DownloadManager.getDownloadManager();
+    private final MainView view;
 
-    public void startDownloading(String urlString, String pathString,JProgressBar progressBar, JLabel description) throws MalformedURLException, IOException {
-        Downloader objDownloader = downloadManager.startDownloading(urlString, pathString);
-        new DownloadProgressChecker(objDownloader, pathString, urlString, progressBar, description).start();
+    public DownloadManagerController(MainView view) {
+        this.view = view;
     }
+    
+    public void download(String urlString, String pathString,JProgressBar progressBar, JLabel description) throws MalformedURLException, IOException {
+        Downloader objDownloader = downloadManager.download(urlString, pathString);
+        DownloadProgressChecker downloadProgressChecker = new DownloadProgressChecker(objDownloader, this.view);
+        downloadProgressChecker.start();
+    }
+
+    public void downloadAndUnzip(String urlString, String zipFilename, String unzipFilename) throws MalformedURLException, IOException {
+        Downloader objDownloader = downloadManager.downloadAndUnzip(urlString, zipFilename, unzipFilename);
+        DownloadProgressChecker downloadProgressChecker = new DownloadProgressChecker(objDownloader, this.view);
+        downloadProgressChecker.start();
+    }
+    
     
     public void pauseDownloading(int ID) throws InterruptedException, IOException {
         downloadManager.pauseDownloading(ID);

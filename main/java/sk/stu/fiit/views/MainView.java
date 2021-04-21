@@ -17,15 +17,16 @@ import sk.stu.fiit.models.DestinationResolver;
  *
  * @author Admin
  */
-public class MainView extends javax.swing.JFrame {
+public class MainView extends javax.swing.JFrame{
     
-    private final DownloadManagerController downloadController = new DownloadManagerController();
+    private final DownloadManagerController downloadController;
 
     /**
      * Creates new form InitView
      */
     public MainView() {
         initComponents();
+        this.downloadController = new DownloadManagerController(this);
     }
 
     /**
@@ -38,11 +39,6 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        recentDownloadsTable = new javax.swing.JScrollPane();
-        recentDOwnloadsTable = new javax.swing.JTable();
-        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         urlTF = new javax.swing.JTextField();
         startDownloadingBtn = new javax.swing.JButton();
@@ -53,6 +49,11 @@ public class MainView extends javax.swing.JFrame {
         progressLb = new javax.swing.JLabel();
         resumeBtn = new javax.swing.JButton();
         pauseBtn = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        recentDownloadsTable = new javax.swing.JScrollPane();
+        recentDOwnloadsTable = new javax.swing.JTable();
+        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel3 = new javax.swing.JPanel();
         jProgressBar1 = new javax.swing.JProgressBar();
         jProgressBar2 = new javax.swing.JProgressBar();
@@ -65,31 +66,6 @@ public class MainView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Úvodna obrazovka");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 350, 80));
-
-        recentDOwnloadsTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        recentDownloadsTable.setViewportView(recentDOwnloadsTable);
-
-        jPanel1.add(recentDownloadsTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 150));
-
-        jToggleButton1.setText("stiahnuť");
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, -1, -1));
-
-        jTabbedPane1.addTab("úvod", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -135,6 +111,31 @@ public class MainView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("sťahovanie", jPanel2);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Úvodna obrazovka");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 350, 80));
+
+        recentDOwnloadsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        recentDownloadsTable.setViewportView(recentDOwnloadsTable);
+
+        jPanel1.add(recentDownloadsTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 150));
+
+        jToggleButton1.setText("stiahnuť");
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, -1, -1));
+
+        jTabbedPane1.addTab("úvod", jPanel1);
+
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, -1, -1));
         jPanel3.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
@@ -177,7 +178,8 @@ public class MainView extends javax.swing.JFrame {
             // TODO add your handling code here:
             String urlString1 = urlTF.getText();
             String pathString1 = DestinationResolver.getPath(urlString1);
-            this.downloadController.startDownloading(urlString1, pathString1, this.progressBar, this.progressLb);
+            this.downloadController.download(urlString1, pathString1, this.progressBar, this.progressLb);
+            
         } catch (MalformedURLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Skontroluj si URL zlaticko");
         } catch (IOException ex) {
@@ -272,4 +274,13 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JCheckBox unzipCB;
     private javax.swing.JTextField urlTF;
     // End of variables declaration//GEN-END:variables
+
+    public void updateProgress(int[] downloadState){
+        float percentage = (float)downloadState[0] / (float)downloadState[1] * 100;
+        System.out.println("percentage = " + percentage);
+        this.progressBar.setMaximum(downloadState[1]);
+        this.progressBar.setValue(downloadState[0]);
+        this.progressLb.setText(percentage + "%");
+    }
+    
 }
