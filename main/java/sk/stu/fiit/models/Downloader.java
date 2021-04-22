@@ -58,7 +58,7 @@ public class Downloader extends Thread implements Serializable{
             while ((byteContent = inputStream.read(data, 0, 1024)) != -1 && !isInterrupted()) {
                 downloaded += byteContent;
                 fileOS.write(data, 0, byteContent);
-                
+                sleep(100);
                 while(!running){
                     Downloader.yield();
                     sleep(5000);
@@ -68,10 +68,11 @@ public class Downloader extends Thread implements Serializable{
         } catch (IOException ex) {
             Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, "Nepodarilo sa zapisovat do suporu", ex);
         } catch (InterruptedException ex) {
+            System.out.println("Stahovanie bolo interruptnute");
             Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, "Thread downloadera bol preruseny", ex);
         }
         
-        saveMe(this);
+        System.out.println("Stahovanie bolo ukoncene");
     }
 
     public int getDownloaded() {
@@ -83,13 +84,14 @@ public class Downloader extends Thread implements Serializable{
     }
     
     public void pauseDownloading() throws InterruptedException{
-        System.out.println("Prerusujem");
         running = false;
     }
 
     public void resumeDownloading() {
-        System.out.println("Obnovujem");
         running = true;
     }
     
+    public void cancelDownloading(){
+        interrupt();
+    }
 }

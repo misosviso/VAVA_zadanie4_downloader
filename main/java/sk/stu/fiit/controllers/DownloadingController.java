@@ -18,12 +18,12 @@ import sk.stu.fiit.views.MainView;
  *
  * @author Admin
  */
-public class DownloadManagerController{
+public class DownloadingController{
     
     private final DownloadManager downloadManager = DownloadManager.getDownloadManager();
     private final MainView view;
 
-    public DownloadManagerController(MainView view) {
+    public DownloadingController(MainView view) {
         this.view = view;
     }
     
