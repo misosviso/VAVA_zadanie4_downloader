@@ -9,7 +9,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
-import sk.stu.fiit.models.DownloadManager;
+import javax.swing.table.DefaultTableModel;
+import sk.stu.fiit.models.DownloadingManager;
 import sk.stu.fiit.models.DownloadProgressChecker;
 import sk.stu.fiit.models.Downloader;
 import sk.stu.fiit.views.MainView;
@@ -18,9 +19,9 @@ import sk.stu.fiit.views.MainView;
  *
  * @author Admin
  */
-public class DownloadingController{
+public class DownloadingController implements CustomTableModel{
     
-    private final DownloadManager downloadManager = DownloadManager.getDownloadManager();
+    private final DownloadingManager manager = DownloadingManager.getDownloadManager();
     private final MainView view;
 
     public DownloadingController(MainView view) {
@@ -28,17 +29,22 @@ public class DownloadingController{
     }
     
     public void download(String urlString, String pathString,JProgressBar progressBar, JLabel description) throws MalformedURLException, IOException {
-        Downloader objDownloader = downloadManager.download(urlString, pathString);
+        Downloader objDownloader = manager.download(urlString, pathString);
         DownloadProgressChecker downloadProgressChecker = new DownloadProgressChecker(objDownloader, this.view);
         downloadProgressChecker.start();
     }
     
     public void pauseDownloading(int ID) throws InterruptedException, IOException {
-        downloadManager.pauseDownloading(ID);
+        manager.pauseDownloading(ID);
     }
 
     public void resumeDownloading(int ID) throws InterruptedException, IOException {
-        downloadManager.resumeDownloading(ID);
+        manager.resumeDownloading(ID);
+    }
+    
+    public DefaultTableModel getDownloading(){
+        return new DefaultTableModel(getTableData(this.manager.getDownloading()), 
+                new Object[]{"ID", "Dátum", "URL adresa", "Destinácia", "Status", "Veľkosť", "Trvanie"});
     }
 
 }

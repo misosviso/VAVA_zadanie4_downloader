@@ -11,7 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import sk.stu.fiit.models.DownloadManager;
+import sk.stu.fiit.models.DownloadingManager;
 import sk.stu.fiit.models.Downloader;
 
 /**
@@ -20,7 +20,7 @@ import sk.stu.fiit.models.Downloader;
  */
 public class Serializer {
     
-    public static void serialize(DownloadManager objDM) throws IOException{
+    public static void serialize(DownloadingManager objDM) throws IOException{
         String filename = "downloaderManager.txt";
         File objSerializationFile = new File(filename);
         

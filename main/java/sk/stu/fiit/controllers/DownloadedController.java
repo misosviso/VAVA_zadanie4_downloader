@@ -5,11 +5,20 @@
  */
 package sk.stu.fiit.controllers;
 
+import javax.swing.table.DefaultTableModel;
+import sk.stu.fiit.models.DownloadedManager;
+
 /**
  *
  * @author Admin
  */
-public class DownloadedController {
+public class DownloadedController implements CustomTableModel{
     
+    private final DownloadedManager manager = DownloadedManager.getDownloadedManager();
+    
+    public DefaultTableModel getHistory(){
+        return new DefaultTableModel(getTableData(this.manager.getDownloaded()), 
+                new Object[]{"ID", "Dátum", "URL adresa", "Destinácia", "Status", "Veľkosť", "Trvanie"});
+    }
     
 }
