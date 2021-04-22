@@ -27,34 +27,20 @@ public class Downloader extends Thread implements Serializable{
     private volatile boolean running = true;
     private int totalSize = 0;
     private int downloaded = 0;
-    private final DownloadManager manager;
-    private final boolean unzip;
     
     /**
      * Constructor
      * @param id ID of downloading task
      * @param strSource URL address
      * @param strDestination path to the destination file
-     * @param manager
      * @throws MalformedURLException if the user given URL is not valid
      */
 
-    public Downloader(int id, String strSource, String strDestination, DownloadManager manager) throws MalformedURLException, IOException {
+    public Downloader(int id, String strSource, String strDestination) throws MalformedURLException, IOException {
         this.id = id;
         this.source = new URL(strSource);
         this.destination = new File(strDestination);
         this.totalSize = source.openConnection().getContentLength();
-        this.manager = manager;
-        this.unzip = false;
-    }
-    
-    public Downloader(int id, String strSource, String strDestination, DownloadManager manager, boolean unzip) throws MalformedURLException, IOException {
-        this.id = id;
-        this.source = new URL(strSource);
-        this.destination = new File(strDestination);
-        this.totalSize = source.openConnection().getContentLength();
-        this.manager = manager;
-        this.unzip = unzip;
     }
     
     public int getDownloaderId() {
@@ -69,7 +55,7 @@ public class Downloader extends Thread implements Serializable{
             byte data[] = new byte[1024];
             int byteContent;
             
-            while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
+            while ((byteContent = inputStream.read(data, 0, 1024)) != -1 && !isInterrupted()) {
                 downloaded += byteContent;
                 fileOS.write(data, 0, byteContent);
                 
@@ -84,6 +70,8 @@ public class Downloader extends Thread implements Serializable{
         } catch (InterruptedException ex) {
             Logger.getLogger(Downloader.class.getName()).log(Level.SEVERE, "Thread downloadera bol preruseny", ex);
         }
+        
+        saveMe(this);
     }
 
     public int getDownloaded() {

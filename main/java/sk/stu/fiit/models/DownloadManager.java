@@ -10,7 +10,6 @@ import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.util.LinkedList;
 import java.util.List;
-import sk.stu.fiit.models.unzipping.Unzipper;
 
 /**
  * Singleton class, which is holds information about all downloads
@@ -46,18 +45,9 @@ public class DownloadManager extends Thread implements Serializable{
      * @throws MalformedURLException
      * @throws IOException 
      */
-    
     public Downloader download(String urlString, String pathString) throws MalformedURLException, IOException{
         int ID = lastIndex++;
-        Downloader objDownloader = new Downloader(ID, urlString, pathString, this);
-        this.downloads.add(objDownloader);
-        objDownloader.start(); 
-        return objDownloader;
-    }
-    
-    public Downloader downloadAndUnzip(String urlString, String zipFilename, String unzipFilename) throws MalformedURLException, IOException{
-        int ID = lastIndex++;
-        Downloader objDownloader = new Downloader(ID, urlString, zipFilename, this);
+        Downloader objDownloader = new Downloader(ID, urlString, pathString);
         this.downloads.add(objDownloader);
         objDownloader.start(); 
         return objDownloader;

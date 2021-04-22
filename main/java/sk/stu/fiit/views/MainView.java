@@ -43,26 +43,27 @@ public class MainView extends javax.swing.JFrame{
         urlTF = new javax.swing.JTextField();
         startDownloadingBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        unzipCB = new javax.swing.JCheckBox();
-        openAfterDownloadCB = new javax.swing.JCheckBox();
-        progressBar = new javax.swing.JProgressBar();
-        progressLb = new javax.swing.JLabel();
-        resumeBtn = new javax.swing.JButton();
-        pauseBtn = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        recentDownloadsTable = new javax.swing.JScrollPane();
-        recentDOwnloadsTable = new javax.swing.JTable();
-        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel3 = new javax.swing.JPanel();
         jProgressBar1 = new javax.swing.JProgressBar();
-        jProgressBar2 = new javax.swing.JProgressBar();
-        jProgressBar3 = new javax.swing.JProgressBar();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        recentDownloadsTable = new javax.swing.JScrollPane();
+        recentDOwnloadsTable = new javax.swing.JTable();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,33 +84,91 @@ public class MainView extends javax.swing.JFrame{
         jLabel2.setText("? estimated time");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 150, -1));
 
-        unzipCB.setText("jCheckBox1");
-        jPanel2.add(unzipCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, -1, -1));
-
-        openAfterDownloadCB.setText("jCheckBox2");
-        jPanel2.add(openAfterDownloadCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
-        jPanel2.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
-
-        progressLb.setText("jLabel3");
-        jPanel2.add(progressLb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 150, -1));
-
-        resumeBtn.setText("Resume");
-        resumeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                resumeBtnMouseReleased(evt);
-            }
-        });
-        jPanel2.add(resumeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, -1));
-
-        pauseBtn.setText("Pause");
-        pauseBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                pauseBtnMouseReleased(evt);
-            }
-        });
-        jPanel2.add(pauseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, -1, -1));
-
         jTabbedPane1.addTab("sťahovanie", jPanel2);
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 270, 30));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Odkiaľ", "Kam", "Veľkosť", "Stiahnuté", "Stav", "Dátum"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 750, 370));
+
+        jButton1.setText("Pauza");
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
+
+        jButton3.setText("Obnoviť");
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, -1));
+
+        jButton4.setText("Zrušiť");
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 430, -1, -1));
+
+        jLabel3.setText("Aktívne sťahovania");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 330, -1));
+
+        jTabbedPane1.addTab("správca sťahovania", jPanel3);
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 720, 430));
+
+        jButton2.setText("Zobraziť detail");
+        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, -1, -1));
+
+        jTabbedPane1.addTab("história", jPanel4);
+
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 720, 340));
+
+        jButton5.setText("Unzip");
+        jPanel5.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 400, -1, -1));
+
+        jTabbedPane1.addTab("unzip", jPanel5);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -132,41 +191,9 @@ public class MainView extends javax.swing.JFrame{
         jPanel1.add(recentDownloadsTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 150));
 
         jToggleButton1.setText("stiahnuť");
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, -1, -1));
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, -1, -1));
 
         jTabbedPane1.addTab("úvod", jPanel1);
-
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, -1, -1));
-        jPanel3.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
-        jPanel3.add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
-
-        jTabbedPane1.addTab("správca sťahovania", jPanel3);
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 27, 720, 430));
-
-        jButton2.setText("Zobraziť detail");
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, -1, -1));
-
-        jTabbedPane1.addTab("história", jPanel4);
-
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane1.addTab("unzip", jPanel5);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
@@ -186,28 +213,6 @@ public class MainView extends javax.swing.JFrame{
             JOptionPane.showMessageDialog(rootPane, "IO chybicka");
         }
     }//GEN-LAST:event_startDownloadingBtnMouseReleased
-
-    private void pauseBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pauseBtnMouseReleased
-        try {
-            // TODO add your handling code here:
-            this.downloadController.pauseDownloading(0);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_pauseBtnMouseReleased
-
-    private void resumeBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resumeBtnMouseReleased
-        try {
-            // TODO add your handling code here:
-            this.downloadController.resumeDownloading(0);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_resumeBtnMouseReleased
 
     /**
      * @param args the command line arguments
@@ -248,30 +253,31 @@ public class MainView extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JCheckBox openAfterDownloadCB;
-    private javax.swing.JButton pauseBtn;
-    private javax.swing.JProgressBar progressBar;
-    private javax.swing.JLabel progressLb;
     private javax.swing.JTable recentDOwnloadsTable;
     private javax.swing.JScrollPane recentDownloadsTable;
-    private javax.swing.JButton resumeBtn;
     private javax.swing.JButton startDownloadingBtn;
-    private javax.swing.JCheckBox unzipCB;
     private javax.swing.JTextField urlTF;
     // End of variables declaration//GEN-END:variables
 

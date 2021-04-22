@@ -22,8 +22,6 @@ public class DownloadProgressChecker extends Thread{
     private final Downloader objDownloader;
     private final int[] downloadState;
     private MainView view;
-    private JProgressBar progressBar;
-    private JLabel progressLb;
 
     public DownloadProgressChecker(Downloader objDownloader) throws IOException {
         this.downloadState = new int[]{0, objDownloader.getTotalSize()};
