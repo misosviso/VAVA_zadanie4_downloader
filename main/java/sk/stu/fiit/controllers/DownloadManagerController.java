@@ -32,13 +32,6 @@ public class DownloadManagerController{
         DownloadProgressChecker downloadProgressChecker = new DownloadProgressChecker(objDownloader, this.view);
         downloadProgressChecker.start();
     }
-
-    public void downloadAndUnzip(String urlString, String zipFilename, String unzipFilename) throws MalformedURLException, IOException {
-        Downloader objDownloader = downloadManager.downloadAndUnzip(urlString, zipFilename, unzipFilename);
-        DownloadProgressChecker downloadProgressChecker = new DownloadProgressChecker(objDownloader, this.view);
-        downloadProgressChecker.start();
-    }
-    
     
     public void pauseDownloading(int ID) throws InterruptedException, IOException {
         downloadManager.pauseDownloading(ID);
