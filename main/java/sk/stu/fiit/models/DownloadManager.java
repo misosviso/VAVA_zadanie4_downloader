@@ -70,4 +70,8 @@ public class DownloadManager extends Thread implements Serializable{
         return null; 
     }
 
+    public List<TableModelItem> getDownloading() {
+        return (List<TableModelItem>) (Object) downloads;
+    }
+
 }
