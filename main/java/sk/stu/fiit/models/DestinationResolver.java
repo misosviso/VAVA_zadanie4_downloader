@@ -6,11 +6,8 @@
 package sk.stu.fiit.models;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import sk.stu.fiit.exceptions.NoFileSelected;
@@ -101,20 +98,4 @@ public class DestinationResolver {
         return path;
         
     }
-    
-    public static void main(String[] args) {
-        try {
-            String url = "https://filesamples.com/samples/document/txt/sample1.txt";
-            String finalDestinationPath = DestinationResolver.getDownloadPath(url);
-            DownloadManager objDownloadManager = DownloadManager.getDownloadManager();
-            objDownloadManager.download(url, finalDestinationPath);           
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(DestinationResolver.class.getName()).log(Level.SEVERE, "napicu url", ex);
-        } catch (IOException ex) {
-            Logger.getLogger(DestinationResolver.class.getName()).log(Level.SEVERE, "nepodarilo sa zapisat filik", ex);
-        } catch (NoFileSelected ex) {
-            Logger.getLogger(DestinationResolver.class.getName()).log(Level.SEVERE, "nic si si nevybral", ex);
-        }
-    }
-    
 }
