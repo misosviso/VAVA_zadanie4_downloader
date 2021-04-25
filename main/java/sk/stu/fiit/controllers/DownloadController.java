@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.table.DefaultTableModel;
-import sk.stu.fiit.models.DownloadingManager;
+import sk.stu.fiit.models.DownloadManager;
 import sk.stu.fiit.models.DownloadProgressChecker;
 import sk.stu.fiit.models.Downloader;
 import sk.stu.fiit.views.MainView;
@@ -19,12 +19,12 @@ import sk.stu.fiit.views.MainView;
  *
  * @author Admin
  */
-public class DownloadingController implements CustomTableModel{
+public class DownloadController implements CustomTableModel{
     
-    private final DownloadingManager manager = DownloadingManager.getDownloadManager();
+    private final DownloadManager manager = DownloadManager.getDownloadManager();
     private final MainView view;
 
-    public DownloadingController(MainView view) {
+    public DownloadController(MainView view) {
         this.view = view;
     }
     

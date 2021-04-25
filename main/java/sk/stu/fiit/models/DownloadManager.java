@@ -15,27 +15,27 @@ import java.util.List;
  * Singleton class, which is holds information about all downloads
  * @author Admin
  */
-public class DownloadingManager extends Thread implements Serializable{
+public class DownloadManager extends Thread implements Serializable{
 
     /**
      * Factory for getting instance of DownloadManager
      * @return 
      */
-    public static DownloadingManager getDownloadManager() {
+    public static DownloadManager getDownloadManager() {
         if(instanceOfSelf == null){
-            instanceOfSelf = new DownloadingManager();
+            instanceOfSelf = new DownloadManager();
         }
         return instanceOfSelf;
     }
     
     private int lastIndex = 0;
     private final List<Downloader> downloads = new LinkedList<>();
-    private static DownloadingManager instanceOfSelf = null;
+    private static DownloadManager instanceOfSelf = null;
 
     /**
      * private constructor
      */
-    private DownloadingManager() {}
+    private DownloadManager() {}
     
     /**
      * start new download

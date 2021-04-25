@@ -79,6 +79,8 @@ public class Downloader extends Thread implements TableModelItem{
         if(isInterrupted()){
             new File(destination).delete();
         }
+        
+        RecordManager.getDownloadedManager().addRecord(this);
     }
 
     public int getDownloaded() {

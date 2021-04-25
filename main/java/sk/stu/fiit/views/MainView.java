@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import sk.stu.fiit.controllers.DownloadingController;
+import sk.stu.fiit.controllers.DownloadController;
 import sk.stu.fiit.models.DestinationResolver;
 
 /**
@@ -19,14 +19,14 @@ import sk.stu.fiit.models.DestinationResolver;
  */
 public class MainView extends javax.swing.JFrame{
     
-    private final DownloadingController downloadController;
+    private final DownloadController downloadController;
 
     /**
      * Creates new form InitView
      */
     public MainView() {
         initComponents();
-        this.downloadController = new DownloadingController(this);
+        this.downloadController = new DownloadController(this);
     }
 
     /**

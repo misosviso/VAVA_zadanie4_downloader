@@ -16,19 +16,19 @@ import java.util.logging.Logger;
  *
  * @author Admin
  */
-public class DownloadedManager {
+public class RecordManager {
 
-    public static DownloadedManager getDownloadedManager() {
+    public static RecordManager getDownloadedManager() {
         if(instanceOfSelf == null){
-            instanceOfSelf = new DownloadedManager();
+            instanceOfSelf = new RecordManager();
         }
         return instanceOfSelf;
     }
     
-    private final List<DownloadedRecord> records = new LinkedList<>();
-    private static DownloadedManager instanceOfSelf;
+    private final List<DownloadRecord> records = new LinkedList<>();
+    private static RecordManager instanceOfSelf;
 
-    private DownloadedManager() {
+    private RecordManager() {
     }
 
     public List<TableModelItem> getDownloaded() {
@@ -36,7 +36,7 @@ public class DownloadedManager {
     }
 
     void addRecord(Downloader objDownloader) {
-        DownloadedRecord objDownloadedRecord = new DownloadedRecord(objDownloader);
+        DownloadRecord objDownloadedRecord = new DownloadRecord(objDownloader);
         records.add(objDownloadedRecord);
         System.out.println(Arrays.toString(objDownloadedRecord.getDataRow()));
     }
@@ -47,10 +47,10 @@ public class DownloadedManager {
             String source = "https://www.sample-videos.com/pdf/Sample-pdf-5mb.pdf";
             String destination = "C:\\Users\\42194\\Desktop\\sample_pdf.pdf";
             
-            DownloadingManager objDownloadingManager = DownloadingManager.getDownloadManager();
+            DownloadManager objDownloadingManager = DownloadManager.getDownloadManager();
             objDownloadingManager.download(source, destination);
         } catch (IOException ex) {
-            Logger.getLogger(DownloadedManager.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RecordManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author Admin
  */
-public class DownloadedRecord implements TableModelItem{
+public class DownloadRecord implements TableModelItem{
     
     private final int ID;
     private final Date startingDate;
@@ -21,9 +21,13 @@ public class DownloadedRecord implements TableModelItem{
     private final String filePath;
     private final boolean interrupted;
     private final int size;
+
+    public String getFilePath() {
+        return filePath;
+    }
     private final long timeElapsed;
 
-    public DownloadedRecord(Downloader downloader) {
+    public DownloadRecord(Downloader downloader) {
         this.ID = downloader.getDownloaderId();
         this.startingDate = (Date) downloader.getDate();
         this.url = downloader.getUrl();
