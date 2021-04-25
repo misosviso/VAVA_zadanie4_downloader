@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sk.stu.fiit.IO.Serializer;
 import sk.stu.fiit.exceptions.NotZipException;
 import sk.stu.fiit.models.unzipping.Unzipper;
 
@@ -20,7 +23,11 @@ public class RecordManager {
 
     public static RecordManager getDownloadedManager() {
         if(instanceOfSelf == null){
-            instanceOfSelf = new RecordManager();
+            try {
+                instanceOfSelf = Serializer.load();
+            } catch (IOException ex) {
+                instanceOfSelf = new RecordManager();
+            }
         }
         return instanceOfSelf;
     }
@@ -53,6 +60,11 @@ public class RecordManager {
         DownloadRecord objDownloadedRecord = new DownloadRecord(objDownloader);
         records.add(objDownloadedRecord);
         System.out.println(Arrays.toString(objDownloadedRecord.getDataRow()));
+        try {
+            save();
+        } catch (IOException ex) {
+            Logger.getLogger(RecordManager.class.getName()).log(Level.SEVERE, "Nepodarilo sa serializovat", ex);
+        }
     }
 
     public void unzip(int selectedZipIndex, String destinationPath) throws IOException, NotZipException {
@@ -62,5 +74,11 @@ public class RecordManager {
         }
         Unzipper.unzip(filename, destinationPath);
     }
+    
+    private void save() throws IOException{
+        Serializer.serialize(this);
+    }
+    
+    
     
 }
