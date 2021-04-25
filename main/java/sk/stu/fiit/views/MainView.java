@@ -204,7 +204,7 @@ public class MainView extends javax.swing.JFrame{
         try {
             // TODO add your handling code here:
             String urlString1 = urlTF.getText();
-            String pathString1 = DestinationResolver.getPath(urlString1);
+            String pathString1 = DestinationResolver.getDownloadPath(urlString1);
             this.downloadController.download(urlString1, pathString1, this.progressBar, this.progressLb);
             
         } catch (MalformedURLException ex) {
