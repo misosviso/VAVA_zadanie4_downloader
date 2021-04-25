@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import sk.stu.fiit.controllers.DownloadManagerController;
+import sk.stu.fiit.controllers.DownloadController;
 import sk.stu.fiit.models.DestinationResolver;
 
 /**
@@ -18,6 +18,7 @@ import sk.stu.fiit.models.DestinationResolver;
  * @author Admin
  */
 public class MainView extends javax.swing.JFrame{
+
     private JLabel lblActualPanel;
     private final DownloadManagerController downloadController;
 
@@ -943,6 +944,7 @@ public class MainView extends javax.swing.JFrame{
             String urlString1 = urlTF.getText();
             String pathString1 = DestinationResolver.getPath(urlString1);
             this.downloadController.download(urlString1, pathString1, this.progressBarP3, this.lblPercentageP3);
+
             
         } catch (MalformedURLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Skontroluj si URL zlaticko");
