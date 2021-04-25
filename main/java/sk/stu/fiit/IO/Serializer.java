@@ -11,8 +11,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import sk.stu.fiit.models.DownloadManager;
 import sk.stu.fiit.models.Downloader;
+import sk.stu.fiit.models.RecordManager;
 
 /**
  *
@@ -20,27 +20,23 @@ import sk.stu.fiit.models.Downloader;
  */
 public class Serializer {
     
-    public static void serialize(DownloadManager objDM) throws IOException{
-        String filename = "downloaderManager.txt";
+    public static void serialize(RecordManager objRM) throws IOException{
+        String filename = "history.txt";
         File objSerializationFile = new File(filename);
         
         try (FileOutputStream fileOutputStream = new FileOutputStream(objSerializationFile); 
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
-            objectOutputStream.writeObject(objDM);
+            objectOutputStream.writeObject(objRM);
         }
     }
     
-    public static Downloader load(int ID_Downloader) throws IOException{
-        String filename = "downloader" + ID_Downloader + ".txt";
+    public static RecordManager load() throws IOException{
+        String filename = "history.txt";
         File objSerializationFile = new File(filename);
         
         try (FileInputStream fileInputStream = new FileInputStream(objSerializationFile); ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-            while(true){
-                Downloader objDownloader = (Downloader) objectInputStream.readObject();
-                if(objDownloader.getId() == ID_Downloader){
-                    return objDownloader;
-                }
-            }
+            RecordManager objManager = (RecordManager) objectInputStream.readObject();
+            return objManager;
         } catch (ClassNotFoundException ex) {
             return null;
         }
