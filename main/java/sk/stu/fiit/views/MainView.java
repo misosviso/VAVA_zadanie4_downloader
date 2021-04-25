@@ -147,7 +147,6 @@ public class MainView extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Downloader v2"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(826, 550));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -310,6 +309,7 @@ public class MainView extends javax.swing.JFrame{
         lblRecentDownloadsP1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblRecentDownloadsP1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRecentDownloadsP1.setText("Nedávno stiahnuté súbory");
+        lblRecentDownloadsP1.setToolTipText("");
         lblRecentDownloadsP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pnlMainPageP1.add(lblRecentDownloadsP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 800, 30));
 
