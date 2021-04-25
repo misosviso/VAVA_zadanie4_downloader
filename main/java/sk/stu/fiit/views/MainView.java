@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sk.stu.fiit.views;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -38,58 +37,282 @@ public class MainView extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        lblMainPage = new javax.swing.JLabel();
+        lblNewDownload = new javax.swing.JLabel();
+        lblManageDownloads = new javax.swing.JLabel();
+        lblUnzip = new javax.swing.JLabel();
+        lblHistory = new javax.swing.JLabel();
+        lblTopSplit = new javax.swing.JLabel();
+        lblTopPanel = new javax.swing.JLabel();
+        lblStatus = new javax.swing.JLabel();
+        fldStatus = new javax.swing.JTextField();
+        lblTime = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
+        lblBottomSplit = new javax.swing.JLabel();
+        lblBottomPanel = new javax.swing.JLabel();
+        Tabbs = new javax.swing.JTabbedPane();
+        pnlMainPageP1 = new javax.swing.JPanel();
+        lblMainTitleP1 = new javax.swing.JLabel();
+        lblRecentDownloadsP1 = new javax.swing.JLabel();
+        btnDetailP1 = new javax.swing.JButton();
+        scrollP1 = new javax.swing.JScrollPane();
+        tblDownloadsP1 = new javax.swing.JTable();
+        lblNameP1 = new javax.swing.JLabel();
+        fldNameP1 = new javax.swing.JTextField();
+        fldSubjectP1 = new javax.swing.JTextField();
+        lblSubjectP1 = new javax.swing.JLabel();
+        fldCreatorsP1 = new javax.swing.JTextField();
+        lblLanguageP1 = new javax.swing.JLabel();
+        btnSlovakP1 = new javax.swing.JButton();
+        lblEnglishP1 = new javax.swing.JButton();
+        lblCreatorsP1 = new javax.swing.JLabel();
+        btnOpenP1 = new javax.swing.JButton();
+        lblBackgroundP1 = new javax.swing.JLabel();
+        pnlNewDownloadP2 = new javax.swing.JPanel();
         urlTF = new javax.swing.JTextField();
+        urlTF1 = new javax.swing.JTextField();
         startDownloadingBtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        lblMainTitleP2 = new javax.swing.JLabel();
+        lblDetailInfoP5 = new javax.swing.JLabel();
+        lblDetailInfoP4 = new javax.swing.JLabel();
+        lblDestinationP4 = new javax.swing.JLabel();
+        fldDestinationP4 = new javax.swing.JTextField();
+        lblSizeP4 = new javax.swing.JLabel();
+        fldSizeP4 = new javax.swing.JTextField();
+        lblStatusP4 = new javax.swing.JLabel();
+        fldStatusP4 = new javax.swing.JTextField();
+        lblSeparator6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        recentDownloadsTable = new javax.swing.JScrollPane();
-        recentDOwnloadsTable = new javax.swing.JTable();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        lblBackgroundP2 = new javax.swing.JLabel();
+        pnlManageDownloadsP3 = new javax.swing.JPanel();
+        lblSourceP3 = new javax.swing.JLabel();
+        fldSourceP3 = new javax.swing.JTextField();
+        lblDetailInfoP3 = new javax.swing.JLabel();
+        lblPercentageP3 = new javax.swing.JLabel();
+        progressBarP3 = new javax.swing.JProgressBar();
+        scrollP3 = new javax.swing.JScrollPane();
+        tblDownloadsP3 = new javax.swing.JTable();
+        btnPauseP3 = new javax.swing.JButton();
+        btnResumeP3 = new javax.swing.JButton();
+        btnAbortP3 = new javax.swing.JButton();
+        btnShowDetailP3 = new javax.swing.JButton();
+        lblMainTitleP3 = new javax.swing.JLabel();
+        fldStartP3 = new javax.swing.JTextField();
+        lblStartP3 = new javax.swing.JLabel();
+        fldDurationP3 = new javax.swing.JTextField();
+        lblDurationP3 = new javax.swing.JLabel();
+        fldRemainingP3 = new javax.swing.JTextField();
+        lblRemainingP3 = new javax.swing.JLabel();
+        lblDestinationP3 = new javax.swing.JLabel();
+        fldDestinationP3 = new javax.swing.JTextField();
+        lblSizeP3 = new javax.swing.JLabel();
+        fldSizeP3 = new javax.swing.JTextField();
+        lblStatusP3 = new javax.swing.JLabel();
+        fldStatusP3 = new javax.swing.JTextField();
+        lblBackgroundP3 = new javax.swing.JLabel();
+        pnlUnzipP4 = new javax.swing.JPanel();
+        lblMainTitleP4 = new javax.swing.JLabel();
+        btnUnzipP4 = new javax.swing.JButton();
+        scrollP4 = new javax.swing.JScrollPane();
+        tblDownloadsP4 = new javax.swing.JTable();
+        lblBackgroundP4 = new javax.swing.JLabel();
+        pnlHistoryP5 = new javax.swing.JPanel();
+        lblMainTitleP5 = new javax.swing.JLabel();
+        scrollP5 = new javax.swing.JScrollPane();
+        tblDownloadsP5 = new javax.swing.JTable();
+        btnDetailP5 = new javax.swing.JButton();
+        lblBackgroundP5 = new javax.swing.JLabel();
+        pnlDetailP6 = new javax.swing.JPanel();
+        lblSourceP6 = new javax.swing.JLabel();
+        lblNameP6 = new javax.swing.JLabel();
+        lblSizeP6 = new javax.swing.JLabel();
+        fldSizeP6 = new javax.swing.JTextField();
+        fldNameP6 = new javax.swing.JTextField();
+        fldSourceP6 = new javax.swing.JTextField();
+        lblDateP6 = new javax.swing.JLabel();
+        lblDurationP6 = new javax.swing.JLabel();
+        fldDurationP6 = new javax.swing.JTextField();
+        fldDateP6 = new javax.swing.JTextField();
+        lblMainTitleP6 = new javax.swing.JLabel();
+        fldStatusP6 = new javax.swing.JTextField();
+        lblStatusP6 = new javax.swing.JLabel();
+        btnOpenP6 = new javax.swing.JButton();
+        lblBackgroundP6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("Downloader v2"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(826, 550));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        urlTF.setText("URL");
-        jPanel2.add(urlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 160, 30));
-
-        startDownloadingBtn.setText("Vybrať lokáciu");
-        startDownloadingBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                startDownloadingBtnMouseReleased(evt);
+        lblMainPage.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblMainPage.setForeground(new java.awt.Color(3, 1, 54));
+        lblMainPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMainPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("Bundle"); // NOI18N
+        lblMainPage.setText(bundle.getString("MainMenuView.lblAccommodation.text")); // NOI18N
+        lblMainPage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
+        lblMainPage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblMainPage.setIconTextGap(0);
+        lblMainPage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMainPageMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblMainPageMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblMainPageMouseExited(evt);
             }
         });
-        jPanel2.add(startDownloadingBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 160, -1));
+        getContentPane().add(lblMainPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 120, 40));
 
-        jLabel2.setText("? estimated time");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 150, -1));
+        lblNewDownload.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblNewDownload.setForeground(new java.awt.Color(3, 1, 54));
+        lblNewDownload.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNewDownload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        lblNewDownload.setText(bundle.getString("MainMenuView.lblAccommodation.text_1")); // NOI18N
+        lblNewDownload.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
+        lblNewDownload.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblNewDownload.setIconTextGap(0);
+        lblNewDownload.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNewDownloadMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblNewDownloadMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblNewDownloadMouseExited(evt);
+            }
+        });
+        getContentPane().add(lblNewDownload, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 190, 40));
 
-        jTabbedPane1.addTab("sťahovanie", jPanel2);
+        lblManageDownloads.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblManageDownloads.setForeground(new java.awt.Color(3, 1, 54));
+        lblManageDownloads.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageDownloads.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        lblManageDownloads.setText(bundle.getString("MainMenuView.lblAccommodation.text_2")); // NOI18N
+        lblManageDownloads.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
+        lblManageDownloads.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblManageDownloads.setIconTextGap(0);
+        lblManageDownloads.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblManageDownloadsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblManageDownloadsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblManageDownloadsMouseExited(evt);
+            }
+        });
+        getContentPane().add(lblManageDownloads, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 190, 40));
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 270, 30));
+        lblUnzip.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblUnzip.setForeground(new java.awt.Color(3, 1, 54));
+        lblUnzip.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUnzip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        lblUnzip.setText(bundle.getString("MainMenuView.lblAccommodation.text_3")); // NOI18N
+        lblUnzip.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
+        lblUnzip.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblUnzip.setIconTextGap(0);
+        lblUnzip.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblUnzipMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblUnzipMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblUnzipMouseExited(evt);
+            }
+        });
+        getContentPane().add(lblUnzip, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 120, 40));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        lblHistory.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblHistory.setForeground(new java.awt.Color(3, 1, 54));
+        lblHistory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        lblHistory.setText(bundle.getString("MainMenuView.lblAccommodation.text_4")); // NOI18N
+        lblHistory.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
+        lblHistory.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblHistory.setIconTextGap(0);
+        lblHistory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHistoryMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblHistoryMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblHistoryMouseExited(evt);
+            }
+        });
+        getContentPane().add(lblHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 120, 40));
+
+        lblTopSplit.setBackground(new java.awt.Color(3, 1, 54));
+        lblTopSplit.setOpaque(true);
+        getContentPane().add(lblTopSplit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 830, 10));
+
+        lblTopPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/panelBackground.jpg"))); // NOI18N
+        lblTopPanel.setName(""); // NOI18N
+        getContentPane().add(lblTopPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 830, 90));
+
+        lblStatus.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        lblStatus.setForeground(new java.awt.Color(250, 250, 250));
+        lblStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblStatus.setText(bundle.getString("MainMenuView.jLabel46.text_1")); // NOI18N
+        lblStatus.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 150, 40));
+
+        fldStatus.setEditable(false);
+        fldStatus.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        fldStatus.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldStatus.setText("Pripravený na sťahovanie");
+        getContentPane().add(fldStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 260, -1));
+
+        lblTime.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        lblTime.setForeground(new java.awt.Color(250, 250, 250));
+        lblTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTime.setText(bundle.getString("MainMenuView.lblTime.text")); // NOI18N
+        getContentPane().add(lblTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, 100, 40));
+
+        lblDate.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(250, 250, 250));
+        lblDate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDate.setText(bundle.getString("MainMenuView.lblDate.text")); // NOI18N
+        getContentPane().add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 480, 90, 40));
+
+        lblBottomSplit.setBackground(new java.awt.Color(3, 1, 54));
+        lblBottomSplit.setOpaque(true);
+        getContentPane().add(lblBottomSplit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 830, 6));
+
+        lblBottomPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/panelBackground.jpg"))); // NOI18N
+        getContentPane().add(lblBottomPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 830, 50));
+
+        pnlMainPageP1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblMainTitleP1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblMainTitleP1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMainTitleP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground3.png"))); // NOI18N
+        lblMainTitleP1.setText("Downloader v2");
+        lblMainTitleP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        lblMainTitleP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlMainPageP1.add(lblMainTitleP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 860, 40));
+
+        lblRecentDownloadsP1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lblRecentDownloadsP1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRecentDownloadsP1.setText("Nedávno stiahnuté súbory");
+        lblRecentDownloadsP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlMainPageP1.add(lblRecentDownloadsP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 800, 30));
+
+        btnDetailP1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnDetailP1.setText("Zobraziť detail");
+        btnDetailP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 200, 0), 2));
+        pnlMainPageP1.add(btnDetailP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 250, 30));
+
+        tblDownloadsP1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -108,96 +331,609 @@ public class MainView extends javax.swing.JFrame{
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        scrollP1.setViewportView(tblDownloadsP1);
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 750, 370));
+        pnlMainPageP1.add(scrollP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 800, 120));
 
-        jButton1.setText("Pauza");
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
+        lblNameP1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblNameP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblNameP1.setText("Názov:");
+        lblNameP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlMainPageP1.add(lblNameP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 90, 30));
 
-        jButton3.setText("Obnoviť");
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, -1));
+        fldNameP1.setEditable(false);
+        fldNameP1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        fldNameP1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldNameP1.setText("Downloader verzia 2.0");
+        fldNameP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldNameP1ActionPerformed(evt);
+            }
+        });
+        pnlMainPageP1.add(fldNameP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 240, 30));
 
-        jButton4.setText("Zrušiť");
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 430, -1, -1));
+        fldSubjectP1.setEditable(false);
+        fldSubjectP1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        fldSubjectP1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldSubjectP1.setText("VaVa, LS 2021");
+        fldSubjectP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldSubjectP1ActionPerformed(evt);
+            }
+        });
+        pnlMainPageP1.add(fldSubjectP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 240, 30));
 
-        jLabel3.setText("Aktívne sťahovania");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 330, -1));
+        lblSubjectP1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblSubjectP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblSubjectP1.setText("Predmet:");
+        lblSubjectP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlMainPageP1.add(lblSubjectP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 90, 30));
 
-        jTabbedPane1.addTab("správca sťahovania", jPanel3);
+        fldCreatorsP1.setEditable(false);
+        fldCreatorsP1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        fldCreatorsP1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldCreatorsP1.setText("Michal Komora, Adam Kotvan");
+        fldCreatorsP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldCreatorsP1ActionPerformed(evt);
+            }
+        });
+        pnlMainPageP1.add(fldCreatorsP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 260, 30));
 
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lblLanguageP1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblLanguageP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLanguageP1.setText("Jazyk:");
+        lblLanguageP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlMainPageP1.add(lblLanguageP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 110, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        btnSlovakP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/slovakFlag.jpg"))); // NOI18N
+        btnSlovakP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnSlovakP1.setEnabled(false);
+        btnSlovakP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSlovakP1ActionPerformed(evt);
+            }
+        });
+        pnlMainPageP1.add(btnSlovakP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 100, -1));
+
+        lblEnglishP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/flagUK.jpg"))); // NOI18N
+        lblEnglishP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        pnlMainPageP1.add(lblEnglishP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 100, 40));
+
+        lblCreatorsP1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblCreatorsP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblCreatorsP1.setText("Tvorcovia:");
+        lblCreatorsP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlMainPageP1.add(lblCreatorsP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 110, 30));
+
+        btnOpenP1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnOpenP1.setText("Otvoriť priečinok so súborom");
+        btnOpenP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 200, 0), 2));
+        pnlMainPageP1.add(btnOpenP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 250, 30));
+
+        lblBackgroundP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP1.setInheritsPopupMenu(false);
+        lblBackgroundP1.setMaximumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP1.setMinimumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP1.setPreferredSize(new java.awt.Dimension(800, 600));
+        pnlMainPageP1.add(lblBackgroundP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
+
+        Tabbs.addTab("úvod", pnlMainPageP1);
+
+        pnlNewDownloadP2.setPreferredSize(new java.awt.Dimension(826, 522));
+        pnlNewDownloadP2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        urlTF.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        urlTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        urlTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        pnlNewDownloadP2.add(urlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 450, 30));
+
+        urlTF1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        urlTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        urlTF1.setText("URL");
+        urlTF1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        pnlNewDownloadP2.add(urlTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 600, 30));
+
+        startDownloadingBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        startDownloadingBtn.setText("Vybrať lokáciu");
+        startDownloadingBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                startDownloadingBtnMouseReleased(evt);
+            }
+        });
+        pnlNewDownloadP2.add(startDownloadingBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 140, 30));
+
+        lblMainTitleP2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblMainTitleP2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMainTitleP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground2.jpg"))); // NOI18N
+        lblMainTitleP2.setText("Začni nové sťahovanie");
+        lblMainTitleP2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        lblMainTitleP2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNewDownloadP2.add(lblMainTitleP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 860, 40));
+
+        lblDetailInfoP5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblDetailInfoP5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("sk/stu/fiit/GUI/Bundle"); // NOI18N
+        lblDetailInfoP5.setText(bundle1.getString("MainMenuView.jLabel46.text")); // NOI18N
+        lblDetailInfoP5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNewDownloadP2.add(lblDetailInfoP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 140, 30));
+
+        lblDetailInfoP4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblDetailInfoP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDetailInfoP4.setText(bundle1.getString("MainMenuView.jLabel46.text")); // NOI18N
+        lblDetailInfoP4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNewDownloadP2.add(lblDetailInfoP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 140, 30));
+
+        lblDestinationP4.setFont(new java.awt.Font("Arial", 3, 16)); // NOI18N
+        lblDestinationP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDestinationP4.setText("Dostupné miesto:");
+        lblDestinationP4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNewDownloadP2.add(lblDestinationP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 140, 30));
+
+        fldDestinationP4.setEditable(false);
+        fldDestinationP4.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldDestinationP4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldDestinationP4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldDestinationP4ActionPerformed(evt);
+            }
+        });
+        pnlNewDownloadP2.add(fldDestinationP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 230, 30));
+
+        lblSizeP4.setFont(new java.awt.Font("Arial", 3, 16)); // NOI18N
+        lblSizeP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblSizeP4.setText("Veľkosť súboru:");
+        lblSizeP4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNewDownloadP2.add(lblSizeP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 180, 30));
+
+        fldSizeP4.setEditable(false);
+        fldSizeP4.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldSizeP4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldSizeP4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldSizeP4ActionPerformed(evt);
+            }
+        });
+        pnlNewDownloadP2.add(fldSizeP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 230, 30));
+
+        lblStatusP4.setFont(new java.awt.Font("Arial", 3, 16)); // NOI18N
+        lblStatusP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblStatusP4.setText("Predpokladaný čas:");
+        lblStatusP4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlNewDownloadP2.add(lblStatusP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 180, 30));
+
+        fldStatusP4.setEditable(false);
+        fldStatusP4.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldStatusP4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldStatusP4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldStatusP4ActionPerformed(evt);
+            }
+        });
+        pnlNewDownloadP2.add(fldStatusP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 230, 30));
+
+        lblSeparator6.setBackground(new java.awt.Color(0, 0, 0));
+        lblSeparator6.setOpaque(true);
+        pnlNewDownloadP2.add(lblSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 780, 3));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/downloadButton.png"))); // NOI18N
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 204, 113), 2));
+        pnlNewDownloadP2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 130, 80));
+
+        lblBackgroundP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP2.setInheritsPopupMenu(false);
+        lblBackgroundP2.setMaximumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP2.setMinimumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP2.setPreferredSize(new java.awt.Dimension(800, 600));
+        pnlNewDownloadP2.add(lblBackgroundP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
+
+        Tabbs.addTab("sťahovanie", pnlNewDownloadP2);
+
+        pnlManageDownloadsP3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblSourceP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        lblSourceP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblSourceP3.setText("Zdroj:");
+        lblSourceP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblSourceP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 60, 40));
+
+        fldSourceP3.setEditable(false);
+        fldSourceP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldSourceP3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldSourceP3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldSourceP3ActionPerformed(evt);
+            }
+        });
+        pnlManageDownloadsP3.add(fldSourceP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 300, 20));
+
+        lblDetailInfoP3.setFont(new java.awt.Font("Arial", 1, 19)); // NOI18N
+        lblDetailInfoP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDetailInfoP3.setText(bundle1.getString("MainMenuView.jLabel46.text")); // NOI18N
+        lblDetailInfoP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblDetailInfoP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 190, 40));
+
+        lblPercentageP3.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        lblPercentageP3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPercentageP3.setText(bundle.getString("MainMenuView.jLabel46.text")); // NOI18N
+        lblPercentageP3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblPercentageP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblPercentageP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 410, 30));
+        pnlManageDownloadsP3.add(progressBarP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 410, 30));
+
+        tblDownloadsP3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Odkiaľ", "Kam", "Veľkosť", "Stiahnuté", "Stav", "Dátum"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true
+            };
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 720, 430));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollP3.setViewportView(tblDownloadsP3);
 
-        jButton2.setText("Zobraziť detail");
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, -1, -1));
+        pnlManageDownloadsP3.add(scrollP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 800, 120));
 
-        jTabbedPane1.addTab("história", jPanel4);
+        btnPauseP3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnPauseP3.setText("Pauza");
+        btnPauseP3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 3, 252), 2));
+        pnlManageDownloadsP3.add(btnPauseP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 110, 30));
 
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnResumeP3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnResumeP3.setText("Obnoviť");
+        btnResumeP3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 184, 9), 2));
+        pnlManageDownloadsP3.add(btnResumeP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 110, 30));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        btnAbortP3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnAbortP3.setText("Zrušiť");
+        btnAbortP3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 3, 3), 2));
+        pnlManageDownloadsP3.add(btnAbortP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 420, 110, 30));
+
+        btnShowDetailP3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnShowDetailP3.setText("Detailné informácie");
+        pnlManageDownloadsP3.add(btnShowDetailP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, 200, -1));
+
+        lblMainTitleP3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblMainTitleP3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMainTitleP3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground.jpg"))); // NOI18N
+        lblMainTitleP3.setText("Aktuálne sťahovania");
+        lblMainTitleP3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        lblMainTitleP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblMainTitleP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 860, 40));
+
+        fldStartP3.setEditable(false);
+        fldStartP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldStartP3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldStartP3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldStartP3ActionPerformed(evt);
+            }
+        });
+        pnlManageDownloadsP3.add(fldStartP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 150, 20));
+
+        lblStartP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        lblStartP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblStartP3.setText("Začiatok:");
+        lblStartP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblStartP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 180, 40));
+
+        fldDurationP3.setEditable(false);
+        fldDurationP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldDurationP3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldDurationP3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldDurationP3ActionPerformed(evt);
+            }
+        });
+        pnlManageDownloadsP3.add(fldDurationP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, 150, 20));
+
+        lblDurationP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        lblDurationP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDurationP3.setText("Aktuálne trvanie:");
+        lblDurationP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblDurationP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 180, 40));
+
+        fldRemainingP3.setEditable(false);
+        fldRemainingP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldRemainingP3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldRemainingP3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldRemainingP3ActionPerformed(evt);
+            }
+        });
+        pnlManageDownloadsP3.add(fldRemainingP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, 150, 20));
+
+        lblRemainingP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        lblRemainingP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblRemainingP3.setText("Predpokladané trvanie:");
+        lblRemainingP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblRemainingP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 180, 40));
+
+        lblDestinationP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        lblDestinationP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDestinationP3.setText("Destinácia:");
+        lblDestinationP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblDestinationP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 90, 40));
+
+        fldDestinationP3.setEditable(false);
+        fldDestinationP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldDestinationP3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldDestinationP3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldDestinationP3ActionPerformed(evt);
+            }
+        });
+        pnlManageDownloadsP3.add(fldDestinationP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 300, 20));
+
+        lblSizeP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        lblSizeP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblSizeP3.setText("Veľkosť súboru:");
+        lblSizeP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblSizeP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 180, 40));
+
+        fldSizeP3.setEditable(false);
+        fldSizeP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldSizeP3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldSizeP3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldSizeP3ActionPerformed(evt);
+            }
+        });
+        pnlManageDownloadsP3.add(fldSizeP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 210, 20));
+
+        lblStatusP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        lblStatusP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblStatusP3.setText("Stav:");
+        lblStatusP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlManageDownloadsP3.add(lblStatusP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 180, 40));
+
+        fldStatusP3.setEditable(false);
+        fldStatusP3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        fldStatusP3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldStatusP3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldStatusP3ActionPerformed(evt);
+            }
+        });
+        pnlManageDownloadsP3.add(fldStatusP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 210, 20));
+
+        lblBackgroundP3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP3.setInheritsPopupMenu(false);
+        lblBackgroundP3.setMaximumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP3.setMinimumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP3.setPreferredSize(new java.awt.Dimension(800, 600));
+        pnlManageDownloadsP3.add(lblBackgroundP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
+
+        Tabbs.addTab("správca sťahovania", pnlManageDownloadsP3);
+
+        pnlUnzipP4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblMainTitleP4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblMainTitleP4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMainTitleP4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground4.jpg"))); // NOI18N
+        lblMainTitleP4.setText("Rozbaľovač");
+        lblMainTitleP4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        lblMainTitleP4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlUnzipP4.add(lblMainTitleP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 860, 40));
+
+        btnUnzipP4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnUnzipP4.setText("Rozbaľ");
+        btnUnzipP4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(219, 135, 230), 2));
+        pnlUnzipP4.add(btnUnzipP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 120, 30));
+
+        tblDownloadsP4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Odkiaľ", "Kam", "Veľkosť", "Stiahnuté", "Stav", "Dátum"
             }
-        ));
-        jScrollPane3.setViewportView(jTable3);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true
+            };
 
-        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 720, 340));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollP4.setViewportView(tblDownloadsP4);
 
-        jButton5.setText("Unzip");
-        jPanel5.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 400, -1, -1));
+        pnlUnzipP4.add(scrollP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 800, 280));
 
-        jTabbedPane1.addTab("unzip", jPanel5);
+        lblBackgroundP4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP4.setInheritsPopupMenu(false);
+        lblBackgroundP4.setMaximumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP4.setMinimumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP4.setPreferredSize(new java.awt.Dimension(800, 600));
+        pnlUnzipP4.add(lblBackgroundP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Tabbs.addTab("unzip", pnlUnzipP4);
 
-        jLabel1.setText("Úvodna obrazovka");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 350, 80));
+        pnlHistoryP5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        recentDOwnloadsTable.setModel(new javax.swing.table.DefaultTableModel(
+        lblMainTitleP5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblMainTitleP5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMainTitleP5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground6.jpg"))); // NOI18N
+        lblMainTitleP5.setText("História sťahovaní");
+        lblMainTitleP5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        lblMainTitleP5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlHistoryP5.add(lblMainTitleP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 860, 40));
+
+        tblDownloadsP5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Odkiaľ", "Kam", "Veľkosť", "Stiahnuté", "Stav", "Dátum"
             }
-        ));
-        recentDownloadsTable.setViewportView(recentDOwnloadsTable);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true
+            };
 
-        jPanel1.add(recentDownloadsTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 150));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollP5.setViewportView(tblDownloadsP5);
 
-        jToggleButton1.setText("stiahnuť");
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, -1, -1));
+        pnlHistoryP5.add(scrollP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 800, 280));
 
-        jTabbedPane1.addTab("úvod", jPanel1);
+        btnDetailP5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnDetailP5.setText("Zobraziť detail");
+        btnDetailP5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 32, 36), 2));
+        pnlHistoryP5.add(btnDetailP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 240, 30));
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+        lblBackgroundP5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP5.setInheritsPopupMenu(false);
+        lblBackgroundP5.setMaximumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP5.setMinimumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP5.setPreferredSize(new java.awt.Dimension(800, 600));
+        pnlHistoryP5.add(lblBackgroundP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
+
+        Tabbs.addTab("história", pnlHistoryP5);
+
+        pnlDetailP6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblSourceP6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblSourceP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblSourceP6.setText("Zdroj:");
+        lblSourceP6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlDetailP6.add(lblSourceP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 90, 30));
+
+        lblNameP6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblNameP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblNameP6.setText("Názov:");
+        lblNameP6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlDetailP6.add(lblNameP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 90, 30));
+
+        lblSizeP6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblSizeP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblSizeP6.setText("Veľkosť:");
+        lblSizeP6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlDetailP6.add(lblSizeP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 90, 30));
+
+        fldSizeP6.setEditable(false);
+        fldSizeP6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        fldSizeP6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldSizeP6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldSizeP6ActionPerformed(evt);
+            }
+        });
+        pnlDetailP6.add(fldSizeP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 230, 30));
+
+        fldNameP6.setEditable(false);
+        fldNameP6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        fldNameP6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldNameP6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldNameP6ActionPerformed(evt);
+            }
+        });
+        pnlDetailP6.add(fldNameP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 600, 30));
+
+        fldSourceP6.setEditable(false);
+        fldSourceP6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        fldSourceP6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldSourceP6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldSourceP6ActionPerformed(evt);
+            }
+        });
+        pnlDetailP6.add(fldSourceP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 600, 30));
+
+        lblDateP6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblDateP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDateP6.setText("Dátum:");
+        lblDateP6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlDetailP6.add(lblDateP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 180, 30));
+
+        lblDurationP6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblDurationP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDurationP6.setText("Trvanie:");
+        lblDurationP6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlDetailP6.add(lblDurationP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 80, 30));
+
+        fldDurationP6.setEditable(false);
+        fldDurationP6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        fldDurationP6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldDurationP6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldDurationP6ActionPerformed(evt);
+            }
+        });
+        pnlDetailP6.add(fldDurationP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 230, 30));
+
+        fldDateP6.setEditable(false);
+        fldDateP6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        fldDateP6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldDateP6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldDateP6ActionPerformed(evt);
+            }
+        });
+        pnlDetailP6.add(fldDateP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 230, 30));
+
+        lblMainTitleP6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblMainTitleP6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMainTitleP6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground5.jpg"))); // NOI18N
+        lblMainTitleP6.setText("DETAILNÉ INFORMÁCIE");
+        lblMainTitleP6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        lblMainTitleP6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlDetailP6.add(lblMainTitleP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 50, 860, 50));
+
+        fldStatusP6.setEditable(false);
+        fldStatusP6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        fldStatusP6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fldStatusP6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldStatusP6ActionPerformed(evt);
+            }
+        });
+        pnlDetailP6.add(fldStatusP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 230, 30));
+
+        lblStatusP6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        lblStatusP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblStatusP6.setText("Stav:");
+        lblStatusP6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlDetailP6.add(lblStatusP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 70, 30));
+
+        btnOpenP6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnOpenP6.setText("Otvoriť priečinok so súborom");
+        btnOpenP6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 240, 240), 2));
+        pnlDetailP6.add(btnOpenP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 270, 30));
+
+        lblBackgroundP6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP6.setInheritsPopupMenu(false);
+        lblBackgroundP6.setMaximumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP6.setMinimumSize(new java.awt.Dimension(800, 600));
+        lblBackgroundP6.setPreferredSize(new java.awt.Dimension(800, 600));
+        pnlDetailP6.add(lblBackgroundP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
+
+        Tabbs.addTab("detail", pnlDetailP6);
+
+        getContentPane().add(Tabbs, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 840, 490));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void startDownloadingBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startDownloadingBtnMouseReleased
@@ -205,7 +941,7 @@ public class MainView extends javax.swing.JFrame{
             // TODO add your handling code here:
             String urlString1 = urlTF.getText();
             String pathString1 = DestinationResolver.getPath(urlString1);
-            this.downloadController.download(urlString1, pathString1, this.progressBar, this.progressLb);
+            this.downloadController.download(urlString1, pathString1, this.progressBarP3, this.progressLb);
             
         } catch (MalformedURLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Skontroluj si URL zlaticko");
@@ -213,6 +949,146 @@ public class MainView extends javax.swing.JFrame{
             JOptionPane.showMessageDialog(rootPane, "IO chybicka");
         }
     }//GEN-LAST:event_startDownloadingBtnMouseReleased
+
+    private void lblManageDownloadsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblManageDownloadsMouseClicked
+        lblManageDownloads.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(106, 101, 247), 3));
+    }//GEN-LAST:event_lblManageDownloadsMouseClicked
+
+    private void lblManageDownloadsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblManageDownloadsMouseEntered
+        lblManageDownloads.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 250, 250), 3));
+    }//GEN-LAST:event_lblManageDownloadsMouseEntered
+
+    private void lblManageDownloadsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblManageDownloadsMouseExited
+        lblManageDownloads.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
+    }//GEN-LAST:event_lblManageDownloadsMouseExited
+
+    private void lblNewDownloadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNewDownloadMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblNewDownloadMouseClicked
+
+    private void lblNewDownloadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNewDownloadMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblNewDownloadMouseEntered
+
+    private void lblNewDownloadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNewDownloadMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblNewDownloadMouseExited
+
+    private void lblHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHistoryMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblHistoryMouseClicked
+
+    private void lblHistoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHistoryMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblHistoryMouseEntered
+
+    private void lblHistoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHistoryMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblHistoryMouseExited
+
+    private void lblUnzipMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUnzipMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblUnzipMouseClicked
+
+    private void lblUnzipMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUnzipMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblUnzipMouseEntered
+
+    private void lblUnzipMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUnzipMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblUnzipMouseExited
+
+    private void lblMainPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMainPageMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblMainPageMouseClicked
+
+    private void lblMainPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMainPageMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblMainPageMouseEntered
+
+    private void lblMainPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMainPageMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblMainPageMouseExited
+
+    private void fldSourceP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldSourceP3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldSourceP3ActionPerformed
+
+    private void fldStartP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldStartP3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldStartP3ActionPerformed
+
+    private void fldDurationP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDurationP3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldDurationP3ActionPerformed
+
+    private void fldRemainingP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldRemainingP3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldRemainingP3ActionPerformed
+
+    private void fldDestinationP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDestinationP3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldDestinationP3ActionPerformed
+
+    private void fldSizeP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldSizeP3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldSizeP3ActionPerformed
+
+    private void fldStatusP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldStatusP3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldStatusP3ActionPerformed
+
+    private void fldDestinationP4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDestinationP4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldDestinationP4ActionPerformed
+
+    private void fldSizeP4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldSizeP4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldSizeP4ActionPerformed
+
+    private void fldStatusP4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldStatusP4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldStatusP4ActionPerformed
+
+    private void fldSizeP6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldSizeP6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldSizeP6ActionPerformed
+
+    private void fldNameP6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldNameP6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldNameP6ActionPerformed
+
+    private void fldSourceP6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldSourceP6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldSourceP6ActionPerformed
+
+    private void fldDurationP6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDurationP6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldDurationP6ActionPerformed
+
+    private void fldDateP6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDateP6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldDateP6ActionPerformed
+
+    private void fldStatusP6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldStatusP6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldStatusP6ActionPerformed
+
+    private void fldNameP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldNameP1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldNameP1ActionPerformed
+
+    private void fldSubjectP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldSubjectP1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldSubjectP1ActionPerformed
+
+    private void fldCreatorsP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldCreatorsP1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldCreatorsP1ActionPerformed
+
+    private void btnSlovakP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSlovakP1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSlovakP1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,40 +1129,115 @@ public class MainView extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane Tabbs;
+    private javax.swing.JButton btnAbortP3;
+    private javax.swing.JButton btnDetailP1;
+    private javax.swing.JButton btnDetailP5;
+    private javax.swing.JButton btnOpenP1;
+    private javax.swing.JButton btnOpenP6;
+    private javax.swing.JButton btnPauseP3;
+    private javax.swing.JButton btnResumeP3;
+    private javax.swing.JButton btnShowDetailP3;
+    private javax.swing.JButton btnSlovakP1;
+    private javax.swing.JButton btnUnzipP4;
+    private javax.swing.JTextField fldCreatorsP1;
+    private javax.swing.JTextField fldDateP6;
+    private javax.swing.JTextField fldDestinationP3;
+    private javax.swing.JTextField fldDestinationP4;
+    private javax.swing.JTextField fldDurationP3;
+    private javax.swing.JTextField fldDurationP6;
+    private javax.swing.JTextField fldNameP1;
+    private javax.swing.JTextField fldNameP6;
+    private javax.swing.JTextField fldRemainingP3;
+    private javax.swing.JTextField fldSizeP3;
+    private javax.swing.JTextField fldSizeP4;
+    private javax.swing.JTextField fldSizeP6;
+    private javax.swing.JTextField fldSourceP3;
+    private javax.swing.JTextField fldSourceP6;
+    private javax.swing.JTextField fldStartP3;
+    private javax.swing.JTextField fldStatus;
+    private javax.swing.JTextField fldStatusP3;
+    private javax.swing.JTextField fldStatusP4;
+    private javax.swing.JTextField fldStatusP6;
+    private javax.swing.JTextField fldSubjectP1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JTable recentDOwnloadsTable;
-    private javax.swing.JScrollPane recentDownloadsTable;
+    private javax.swing.JLabel lblBackgroundP1;
+    private javax.swing.JLabel lblBackgroundP2;
+    private javax.swing.JLabel lblBackgroundP3;
+    private javax.swing.JLabel lblBackgroundP4;
+    private javax.swing.JLabel lblBackgroundP5;
+    private javax.swing.JLabel lblBackgroundP6;
+    private javax.swing.JLabel lblBottomPanel;
+    private javax.swing.JLabel lblBottomSplit;
+    private javax.swing.JLabel lblCreatorsP1;
+    private javax.swing.JLabel lblDate;
+    private javax.swing.JLabel lblDateP6;
+    private javax.swing.JLabel lblDestinationP3;
+    private javax.swing.JLabel lblDestinationP4;
+    private javax.swing.JLabel lblDetailInfoP3;
+    private javax.swing.JLabel lblDetailInfoP4;
+    private javax.swing.JLabel lblDetailInfoP5;
+    private javax.swing.JLabel lblDurationP3;
+    private javax.swing.JLabel lblDurationP6;
+    private javax.swing.JButton lblEnglishP1;
+    private javax.swing.JLabel lblHistory;
+    private javax.swing.JLabel lblLanguageP1;
+    private javax.swing.JLabel lblMainPage;
+    private javax.swing.JLabel lblMainTitleP1;
+    private javax.swing.JLabel lblMainTitleP2;
+    private javax.swing.JLabel lblMainTitleP3;
+    private javax.swing.JLabel lblMainTitleP4;
+    private javax.swing.JLabel lblMainTitleP5;
+    private javax.swing.JLabel lblMainTitleP6;
+    private javax.swing.JLabel lblManageDownloads;
+    private javax.swing.JLabel lblNameP1;
+    private javax.swing.JLabel lblNameP6;
+    private javax.swing.JLabel lblNewDownload;
+    private javax.swing.JLabel lblPercentageP3;
+    private javax.swing.JLabel lblRecentDownloadsP1;
+    private javax.swing.JLabel lblRemainingP3;
+    private javax.swing.JLabel lblSeparator6;
+    private javax.swing.JLabel lblSizeP3;
+    private javax.swing.JLabel lblSizeP4;
+    private javax.swing.JLabel lblSizeP6;
+    private javax.swing.JLabel lblSourceP3;
+    private javax.swing.JLabel lblSourceP6;
+    private javax.swing.JLabel lblStartP3;
+    private javax.swing.JLabel lblStatus;
+    private javax.swing.JLabel lblStatusP3;
+    private javax.swing.JLabel lblStatusP4;
+    private javax.swing.JLabel lblStatusP6;
+    private javax.swing.JLabel lblSubjectP1;
+    private javax.swing.JLabel lblTime;
+    private javax.swing.JLabel lblTopPanel;
+    private javax.swing.JLabel lblTopSplit;
+    private javax.swing.JLabel lblUnzip;
+    private javax.swing.JPanel pnlDetailP6;
+    private javax.swing.JPanel pnlHistoryP5;
+    private javax.swing.JPanel pnlMainPageP1;
+    private javax.swing.JPanel pnlManageDownloadsP3;
+    private javax.swing.JPanel pnlNewDownloadP2;
+    private javax.swing.JPanel pnlUnzipP4;
+    private javax.swing.JProgressBar progressBarP3;
+    private javax.swing.JScrollPane scrollP1;
+    private javax.swing.JScrollPane scrollP3;
+    private javax.swing.JScrollPane scrollP4;
+    private javax.swing.JScrollPane scrollP5;
     private javax.swing.JButton startDownloadingBtn;
+    private javax.swing.JTable tblDownloadsP1;
+    private javax.swing.JTable tblDownloadsP3;
+    private javax.swing.JTable tblDownloadsP4;
+    private javax.swing.JTable tblDownloadsP5;
     private javax.swing.JTextField urlTF;
+    private javax.swing.JTextField urlTF1;
     // End of variables declaration//GEN-END:variables
 
     public void updateProgress(int[] downloadState){
         float percentage = (float)downloadState[0] / (float)downloadState[1] * 100;
         System.out.println("percentage = " + percentage);
-        this.progressBar.setMaximum(downloadState[1]);
-        this.progressBar.setValue(downloadState[0]);
-        this.progressLb.setText(percentage + "%");
+        this.progressBarP3.setMaximum(downloadState[1]);
+        this.progressBarP3.setValue(downloadState[0]);
+        this.lblPercentageP3.setText(percentage + "%");
     }
     
 }
