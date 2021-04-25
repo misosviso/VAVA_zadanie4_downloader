@@ -81,10 +81,6 @@ public class DestinationResolver {
             }
             userFilePath = getPathFromUser(new File(userFilePath));
         }
-                
-
-        
-
         throw new NoFileSelected();
     }
     
