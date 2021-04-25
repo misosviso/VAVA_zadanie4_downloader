@@ -147,13 +147,14 @@ public class MainView extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Downloader v2"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(826, 550));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblMainPage.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblMainPage.setForeground(new java.awt.Color(3, 1, 54));
         lblMainPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        lblMainPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/polygonsBackground.jpg"))); // NOI18N
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("Bundle"); // NOI18N
         lblMainPage.setText(bundle.getString("MainMenuView.lblAccommodation.text")); // NOI18N
         lblMainPage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 245, 255), 3));
@@ -175,7 +176,7 @@ public class MainView extends javax.swing.JFrame{
         lblNewDownload.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblNewDownload.setForeground(new java.awt.Color(3, 1, 54));
         lblNewDownload.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblNewDownload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        lblNewDownload.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/polygonsBackground.jpg"))); // NOI18N
         lblNewDownload.setText(bundle.getString("MainMenuView.lblAccommodation.text_1")); // NOI18N
         lblNewDownload.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
         lblNewDownload.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -196,7 +197,7 @@ public class MainView extends javax.swing.JFrame{
         lblManageDownloads.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblManageDownloads.setForeground(new java.awt.Color(3, 1, 54));
         lblManageDownloads.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblManageDownloads.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        lblManageDownloads.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/polygonsBackground.jpg"))); // NOI18N
         lblManageDownloads.setText(bundle.getString("MainMenuView.lblAccommodation.text_2")); // NOI18N
         lblManageDownloads.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
         lblManageDownloads.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -217,7 +218,7 @@ public class MainView extends javax.swing.JFrame{
         lblUnzip.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblUnzip.setForeground(new java.awt.Color(3, 1, 54));
         lblUnzip.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblUnzip.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        lblUnzip.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/polygonsBackground.jpg"))); // NOI18N
         lblUnzip.setText(bundle.getString("MainMenuView.lblAccommodation.text_3")); // NOI18N
         lblUnzip.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
         lblUnzip.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -238,7 +239,7 @@ public class MainView extends javax.swing.JFrame{
         lblHistory.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblHistory.setForeground(new java.awt.Color(3, 1, 54));
         lblHistory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
+        lblHistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/polygonsBackground.jpg"))); // NOI18N
         lblHistory.setText(bundle.getString("MainMenuView.lblAccommodation.text_4")); // NOI18N
         lblHistory.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
         lblHistory.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -260,7 +261,7 @@ public class MainView extends javax.swing.JFrame{
         lblTopSplit.setOpaque(true);
         getContentPane().add(lblTopSplit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 830, 10));
 
-        lblTopPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/panelBackground.jpg"))); // NOI18N
+        lblTopPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/panelBackground.jpg"))); // NOI18N
         lblTopPanel.setName(""); // NOI18N
         getContentPane().add(lblTopPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 830, 90));
 
@@ -293,14 +294,14 @@ public class MainView extends javax.swing.JFrame{
         lblBottomSplit.setOpaque(true);
         getContentPane().add(lblBottomSplit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 830, 6));
 
-        lblBottomPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/panelBackground.jpg"))); // NOI18N
+        lblBottomPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/panelBackground.jpg"))); // NOI18N
         getContentPane().add(lblBottomPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 830, 50));
 
         pnlMainPageP1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblMainTitleP1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblMainTitleP1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainTitleP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground3.png"))); // NOI18N
+        lblMainTitleP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/lblBackground3.png"))); // NOI18N
         lblMainTitleP1.setText("Downloader v2");
         lblMainTitleP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         lblMainTitleP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -309,7 +310,6 @@ public class MainView extends javax.swing.JFrame{
         lblRecentDownloadsP1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblRecentDownloadsP1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRecentDownloadsP1.setText("Nedávno stiahnuté súbory");
-        lblRecentDownloadsP1.setToolTipText("");
         lblRecentDownloadsP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pnlMainPageP1.add(lblRecentDownloadsP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 800, 30));
 
@@ -392,7 +392,7 @@ public class MainView extends javax.swing.JFrame{
         lblLanguageP1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pnlMainPageP1.add(lblLanguageP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 110, 30));
 
-        btnSlovakP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/slovakFlag.jpg"))); // NOI18N
+        btnSlovakP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/slovakFlag.jpg"))); // NOI18N
         btnSlovakP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         btnSlovakP1.setEnabled(false);
         btnSlovakP1.addActionListener(new java.awt.event.ActionListener() {
@@ -402,7 +402,7 @@ public class MainView extends javax.swing.JFrame{
         });
         pnlMainPageP1.add(btnSlovakP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 100, -1));
 
-        lblEnglishP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/flagUK.jpg"))); // NOI18N
+        lblEnglishP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/flagUK.jpg"))); // NOI18N
         lblEnglishP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         pnlMainPageP1.add(lblEnglishP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 100, 40));
 
@@ -417,7 +417,7 @@ public class MainView extends javax.swing.JFrame{
         btnOpenP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 200, 0), 2));
         pnlMainPageP1.add(btnOpenP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 250, 30));
 
-        lblBackgroundP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/background.jpg"))); // NOI18N
         lblBackgroundP1.setInheritsPopupMenu(false);
         lblBackgroundP1.setMaximumSize(new java.awt.Dimension(800, 600));
         lblBackgroundP1.setMinimumSize(new java.awt.Dimension(800, 600));
@@ -451,7 +451,7 @@ public class MainView extends javax.swing.JFrame{
 
         lblMainTitleP2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblMainTitleP2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainTitleP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground2.jpg"))); // NOI18N
+        lblMainTitleP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/lblBackground2.jpg"))); // NOI18N
         lblMainTitleP2.setText("Začni nové sťahovanie");
         lblMainTitleP2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         lblMainTitleP2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -521,11 +521,11 @@ public class MainView extends javax.swing.JFrame{
         lblSeparator6.setOpaque(true);
         pnlNewDownloadP2.add(lblSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 780, 3));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/downloadButton.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/downloadButton.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 204, 113), 2));
         pnlNewDownloadP2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 130, 80));
 
-        lblBackgroundP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/background.jpg"))); // NOI18N
         lblBackgroundP2.setInheritsPopupMenu(false);
         lblBackgroundP2.setMaximumSize(new java.awt.Dimension(800, 600));
         lblBackgroundP2.setMinimumSize(new java.awt.Dimension(800, 600));
@@ -610,7 +610,7 @@ public class MainView extends javax.swing.JFrame{
 
         lblMainTitleP3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblMainTitleP3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainTitleP3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground.jpg"))); // NOI18N
+        lblMainTitleP3.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/lblBackground.jpg"))); // NOI18N
         lblMainTitleP3.setText("Aktuálne sťahovania");
         lblMainTitleP3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         lblMainTitleP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -712,7 +712,7 @@ public class MainView extends javax.swing.JFrame{
         });
         pnlManageDownloadsP3.add(fldStatusP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 210, 20));
 
-        lblBackgroundP3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP3.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/background.jpg"))); // NOI18N
         lblBackgroundP3.setInheritsPopupMenu(false);
         lblBackgroundP3.setMaximumSize(new java.awt.Dimension(800, 600));
         lblBackgroundP3.setMinimumSize(new java.awt.Dimension(800, 600));
@@ -725,7 +725,7 @@ public class MainView extends javax.swing.JFrame{
 
         lblMainTitleP4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblMainTitleP4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainTitleP4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground4.jpg"))); // NOI18N
+        lblMainTitleP4.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/lblBackground4.jpg"))); // NOI18N
         lblMainTitleP4.setText("Rozbaľovač");
         lblMainTitleP4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         lblMainTitleP4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -759,7 +759,7 @@ public class MainView extends javax.swing.JFrame{
 
         pnlUnzipP4.add(scrollP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 800, 280));
 
-        lblBackgroundP4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP4.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/background.jpg"))); // NOI18N
         lblBackgroundP4.setInheritsPopupMenu(false);
         lblBackgroundP4.setMaximumSize(new java.awt.Dimension(800, 600));
         lblBackgroundP4.setMinimumSize(new java.awt.Dimension(800, 600));
@@ -772,7 +772,7 @@ public class MainView extends javax.swing.JFrame{
 
         lblMainTitleP5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblMainTitleP5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainTitleP5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground6.jpg"))); // NOI18N
+        lblMainTitleP5.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/lblBackground6.jpg"))); // NOI18N
         lblMainTitleP5.setText("História sťahovaní");
         lblMainTitleP5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         lblMainTitleP5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -806,7 +806,7 @@ public class MainView extends javax.swing.JFrame{
         btnDetailP5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 32, 36), 2));
         pnlHistoryP5.add(btnDetailP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 240, 30));
 
-        lblBackgroundP5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP5.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/background.jpg"))); // NOI18N
         lblBackgroundP5.setInheritsPopupMenu(false);
         lblBackgroundP5.setMaximumSize(new java.awt.Dimension(800, 600));
         lblBackgroundP5.setMinimumSize(new java.awt.Dimension(800, 600));
@@ -899,7 +899,7 @@ public class MainView extends javax.swing.JFrame{
 
         lblMainTitleP6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblMainTitleP6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainTitleP6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblBackground5.jpg"))); // NOI18N
+        lblMainTitleP6.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/lblBackground5.jpg"))); // NOI18N
         lblMainTitleP6.setText("DETAILNÉ INFORMÁCIE");
         lblMainTitleP6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         lblMainTitleP6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -926,7 +926,7 @@ public class MainView extends javax.swing.JFrame{
         btnOpenP6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 240, 240), 2));
         pnlDetailP6.add(btnOpenP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 270, 30));
 
-        lblBackgroundP6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        lblBackgroundP6.setIcon(new javax.swing.ImageIcon(getClass().getResource("sk/stu/fiit/Images/background.jpg"))); // NOI18N
         lblBackgroundP6.setInheritsPopupMenu(false);
         lblBackgroundP6.setMaximumSize(new java.awt.Dimension(800, 600));
         lblBackgroundP6.setMinimumSize(new java.awt.Dimension(800, 600));
