@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import sk.stu.fiit.controllers.DownloadManagerController;
 import sk.stu.fiit.models.DestinationResolver;
@@ -17,7 +18,7 @@ import sk.stu.fiit.models.DestinationResolver;
  * @author Admin
  */
 public class MainView extends javax.swing.JFrame{
-    
+    private JLabel lblActualPanel;
     private final DownloadManagerController downloadController;
 
     /**
@@ -25,6 +26,7 @@ public class MainView extends javax.swing.JFrame{
      */
     public MainView() {
         initComponents();
+        this.lblActualPanel = lblMainPage;
         this.downloadController = new DownloadManagerController(this);
     }
 
@@ -50,7 +52,7 @@ public class MainView extends javax.swing.JFrame{
         lblDate = new javax.swing.JLabel();
         lblBottomSplit = new javax.swing.JLabel();
         lblBottomPanel = new javax.swing.JLabel();
-        Tabbs = new javax.swing.JTabbedPane();
+        tabbs = new javax.swing.JTabbedPane();
         pnlMainPageP1 = new javax.swing.JPanel();
         lblMainTitleP1 = new javax.swing.JLabel();
         lblRecentDownloadsP1 = new javax.swing.JLabel();
@@ -151,7 +153,7 @@ public class MainView extends javax.swing.JFrame{
         lblMainPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polygonsBackground.jpg"))); // NOI18N
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("Bundle"); // NOI18N
         lblMainPage.setText(bundle.getString("MainMenuView.lblAccommodation.text")); // NOI18N
-        lblMainPage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
+        lblMainPage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 245, 255), 3));
         lblMainPage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblMainPage.setIconTextGap(0);
         lblMainPage.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -418,7 +420,7 @@ public class MainView extends javax.swing.JFrame{
         lblBackgroundP1.setPreferredSize(new java.awt.Dimension(800, 600));
         pnlMainPageP1.add(lblBackgroundP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
 
-        Tabbs.addTab("úvod", pnlMainPageP1);
+        tabbs.addTab("úvod", pnlMainPageP1);
 
         pnlNewDownloadP2.setPreferredSize(new java.awt.Dimension(826, 522));
         pnlNewDownloadP2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -453,14 +455,13 @@ public class MainView extends javax.swing.JFrame{
 
         lblDetailInfoP5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblDetailInfoP5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("sk/stu/fiit/GUI/Bundle"); // NOI18N
-        lblDetailInfoP5.setText(bundle1.getString("MainMenuView.jLabel46.text")); // NOI18N
+        lblDetailInfoP5.setText(bundle.getString("MainMenuView.jLabel46.text_4")); // NOI18N
         lblDetailInfoP5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pnlNewDownloadP2.add(lblDetailInfoP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 140, 30));
 
         lblDetailInfoP4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblDetailInfoP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblDetailInfoP4.setText(bundle1.getString("MainMenuView.jLabel46.text")); // NOI18N
+        lblDetailInfoP4.setText(bundle.getString("MainMenuView.jLabel46.text_3")); // NOI18N
         lblDetailInfoP4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pnlNewDownloadP2.add(lblDetailInfoP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 140, 30));
 
@@ -527,7 +528,7 @@ public class MainView extends javax.swing.JFrame{
         lblBackgroundP2.setPreferredSize(new java.awt.Dimension(800, 600));
         pnlNewDownloadP2.add(lblBackgroundP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
 
-        Tabbs.addTab("sťahovanie", pnlNewDownloadP2);
+        tabbs.addTab("sťahovanie", pnlNewDownloadP2);
 
         pnlManageDownloadsP3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -549,7 +550,7 @@ public class MainView extends javax.swing.JFrame{
 
         lblDetailInfoP3.setFont(new java.awt.Font("Arial", 1, 19)); // NOI18N
         lblDetailInfoP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblDetailInfoP3.setText(bundle1.getString("MainMenuView.jLabel46.text")); // NOI18N
+        lblDetailInfoP3.setText(bundle.getString("MainMenuView.jLabel46.text_2")); // NOI18N
         lblDetailInfoP3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pnlManageDownloadsP3.add(lblDetailInfoP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 190, 40));
 
@@ -714,7 +715,7 @@ public class MainView extends javax.swing.JFrame{
         lblBackgroundP3.setPreferredSize(new java.awt.Dimension(800, 600));
         pnlManageDownloadsP3.add(lblBackgroundP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
 
-        Tabbs.addTab("správca sťahovania", pnlManageDownloadsP3);
+        tabbs.addTab("správca sťahovania", pnlManageDownloadsP3);
 
         pnlUnzipP4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -761,7 +762,7 @@ public class MainView extends javax.swing.JFrame{
         lblBackgroundP4.setPreferredSize(new java.awt.Dimension(800, 600));
         pnlUnzipP4.add(lblBackgroundP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
 
-        Tabbs.addTab("unzip", pnlUnzipP4);
+        tabbs.addTab("unzip", pnlUnzipP4);
 
         pnlHistoryP5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -808,7 +809,7 @@ public class MainView extends javax.swing.JFrame{
         lblBackgroundP5.setPreferredSize(new java.awt.Dimension(800, 600));
         pnlHistoryP5.add(lblBackgroundP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
 
-        Tabbs.addTab("história", pnlHistoryP5);
+        tabbs.addTab("história", pnlHistoryP5);
 
         pnlDetailP6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -928,9 +929,9 @@ public class MainView extends javax.swing.JFrame{
         lblBackgroundP6.setPreferredSize(new java.awt.Dimension(800, 600));
         pnlDetailP6.add(lblBackgroundP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 840, 510));
 
-        Tabbs.addTab("detail", pnlDetailP6);
+        tabbs.addTab("detail", pnlDetailP6);
 
-        getContentPane().add(Tabbs, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 840, 490));
+        getContentPane().add(tabbs, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 840, 490));
 
         pack();
         setLocationRelativeTo(null);
@@ -941,7 +942,7 @@ public class MainView extends javax.swing.JFrame{
             // TODO add your handling code here:
             String urlString1 = urlTF.getText();
             String pathString1 = DestinationResolver.getPath(urlString1);
-            this.downloadController.download(urlString1, pathString1, this.progressBarP3, this.progressLb);
+            this.downloadController.download(urlString1, pathString1, this.progressBarP3, this.lblPercentageP3);
             
         } catch (MalformedURLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Skontroluj si URL zlaticko");
@@ -951,7 +952,7 @@ public class MainView extends javax.swing.JFrame{
     }//GEN-LAST:event_startDownloadingBtnMouseReleased
 
     private void lblManageDownloadsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblManageDownloadsMouseClicked
-        lblManageDownloads.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(106, 101, 247), 3));
+        switchPanel(lblManageDownloads, 2);
     }//GEN-LAST:event_lblManageDownloadsMouseClicked
 
     private void lblManageDownloadsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblManageDownloadsMouseEntered
@@ -963,51 +964,51 @@ public class MainView extends javax.swing.JFrame{
     }//GEN-LAST:event_lblManageDownloadsMouseExited
 
     private void lblNewDownloadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNewDownloadMouseClicked
-        // TODO add your handling code here:
+        switchPanel(lblNewDownload, 1);
     }//GEN-LAST:event_lblNewDownloadMouseClicked
 
     private void lblNewDownloadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNewDownloadMouseEntered
-        // TODO add your handling code here:
+        lblNewDownload.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 250, 250), 3));
     }//GEN-LAST:event_lblNewDownloadMouseEntered
 
     private void lblNewDownloadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNewDownloadMouseExited
-        // TODO add your handling code here:
+         lblNewDownload.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
     }//GEN-LAST:event_lblNewDownloadMouseExited
 
     private void lblHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHistoryMouseClicked
-        // TODO add your handling code here:
+       switchPanel(lblHistory, 4);
     }//GEN-LAST:event_lblHistoryMouseClicked
 
     private void lblHistoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHistoryMouseEntered
-        // TODO add your handling code here:
+        lblHistory.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 250, 250), 3));
     }//GEN-LAST:event_lblHistoryMouseEntered
 
     private void lblHistoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHistoryMouseExited
-        // TODO add your handling code here:
+        lblHistory.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
     }//GEN-LAST:event_lblHistoryMouseExited
 
     private void lblUnzipMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUnzipMouseClicked
-        // TODO add your handling code here:
+        switchPanel(lblUnzip, 3);
     }//GEN-LAST:event_lblUnzipMouseClicked
 
     private void lblUnzipMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUnzipMouseEntered
-        // TODO add your handling code here:
+        lblUnzip.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 250, 250), 3));
     }//GEN-LAST:event_lblUnzipMouseEntered
 
     private void lblUnzipMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUnzipMouseExited
-        // TODO add your handling code here:
+        lblUnzip.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
     }//GEN-LAST:event_lblUnzipMouseExited
 
     private void lblMainPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMainPageMouseClicked
-        // TODO add your handling code here:
+        switchPanel(lblMainPage, 0);
     }//GEN-LAST:event_lblMainPageMouseClicked
 
     private void lblMainPageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMainPageMouseEntered
-        // TODO add your handling code here:
+        lblMainPage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 250, 250), 3));
     }//GEN-LAST:event_lblMainPageMouseEntered
 
     private void lblMainPageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMainPageMouseExited
-        // TODO add your handling code here:
+        lblMainPage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
     }//GEN-LAST:event_lblMainPageMouseExited
 
     private void fldSourceP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldSourceP3ActionPerformed
@@ -1129,7 +1130,6 @@ public class MainView extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane Tabbs;
     private javax.swing.JButton btnAbortP3;
     private javax.swing.JButton btnDetailP1;
     private javax.swing.JButton btnDetailP5;
@@ -1224,6 +1224,7 @@ public class MainView extends javax.swing.JFrame{
     private javax.swing.JScrollPane scrollP4;
     private javax.swing.JScrollPane scrollP5;
     private javax.swing.JButton startDownloadingBtn;
+    private javax.swing.JTabbedPane tabbs;
     private javax.swing.JTable tblDownloadsP1;
     private javax.swing.JTable tblDownloadsP3;
     private javax.swing.JTable tblDownloadsP4;
@@ -1238,6 +1239,13 @@ public class MainView extends javax.swing.JFrame{
         this.progressBarP3.setMaximum(downloadState[1]);
         this.progressBarP3.setValue(downloadState[0]);
         this.lblPercentageP3.setText(percentage + "%");
+    }
+    
+    public void switchPanel(JLabel lblActual, int switchTo){
+        this.lblActualPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(3, 1, 54), 3));
+        lblActual.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 245, 255), 3));
+        this.lblActualPanel = lblActual;
+        tabbs.setSelectedIndex(switchTo);
     }
     
 }
