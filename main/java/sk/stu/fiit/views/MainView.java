@@ -1,3 +1,5 @@
+package sk.stu.fiit.views;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import sk.stu.fiit.controllers.DownloadController;
+import sk.stu.fiit.exceptions.NoFileSelected;
 import sk.stu.fiit.models.DestinationResolver;
 
 /**
@@ -21,6 +24,7 @@ public class MainView extends javax.swing.JFrame{
 
     private JLabel lblActualPanel;
     private final DownloadManagerController downloadController;
+    private final DownloadController downloadController;
 
     /**
      * Creates new form InitView
@@ -28,7 +32,7 @@ public class MainView extends javax.swing.JFrame{
     public MainView() {
         initComponents();
         this.lblActualPanel = lblMainPage;
-        this.downloadController = new DownloadManagerController(this);
+        this.downloadController = new DownloadController(this);
     }
 
     /**
@@ -942,14 +946,15 @@ public class MainView extends javax.swing.JFrame{
         try {
             // TODO add your handling code here:
             String urlString1 = urlTF.getText();
-            String pathString1 = DestinationResolver.getPath(urlString1);
+            String pathString1 = DestinationResolver.getDownloadPath(urlString1);
             this.downloadController.download(urlString1, pathString1, this.progressBarP3, this.lblPercentageP3);
-
             
         } catch (MalformedURLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Skontroluj si URL zlaticko");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(rootPane, "IO chybicka");
+        } catch (NoFileSelected ex) {
+            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_startDownloadingBtnMouseReleased
 
