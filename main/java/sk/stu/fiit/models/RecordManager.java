@@ -11,6 +11,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sk.stu.fiit.IO.Serializer;
+import sk.stu.fiit.exceptions.NotZipException;
+import sk.stu.fiit.models.unzipping.Unzipper;
 
 /**
  *
@@ -20,7 +23,11 @@ public class RecordManager {
 
     public static RecordManager getDownloadedManager() {
         if(instanceOfSelf == null){
-            instanceOfSelf = new RecordManager();
+            try {
+                instanceOfSelf = Serializer.load();
+            } catch (IOException ex) {
+                instanceOfSelf = new RecordManager();
+            }
         }
         return instanceOfSelf;
     }
@@ -31,28 +38,47 @@ public class RecordManager {
     private RecordManager() {
     }
 
-    public List<TableModelItem> getDownloaded() {
+    public List<TableModelItem> getDownloadedModel() {
         return (List<TableModelItem>) (Object) records;
     }
+    
+    private List<DownloadRecord> getZips() throws IOException{
+       List<DownloadRecord> zipDownloads = new LinkedList<>();
+        for (DownloadRecord record : records) {
+            if(Unzipper.isZip(record.getFilePath())){
+                zipDownloads.add(record);
+            }
+        } 
+        return zipDownloads;
+    } 
+    
+    public List<TableModelItem> getZipsModel() throws IOException{
+        return (List<TableModelItem>) (Object) getZips();
+    }
 
-    void addRecord(Downloader objDownloader) {
+    public void addRecord(Downloader objDownloader) {
         DownloadRecord objDownloadedRecord = new DownloadRecord(objDownloader);
         records.add(objDownloadedRecord);
         System.out.println(Arrays.toString(objDownloadedRecord.getDataRow()));
+        try {
+            save();
+        } catch (IOException ex) {
+            Logger.getLogger(RecordManager.class.getName()).log(Level.SEVERE, "Nepodarilo sa serializovat", ex);
+        }
+    }
+
+    public void unzip(int selectedZipIndex, String destinationPath) throws IOException, NotZipException {
+        String filename = getZips().get(selectedZipIndex).getFilePath();
+        if(!Unzipper.isZip(filename)){
+            throw new NotZipException();
+        }
+        Unzipper.unzip(filename, destinationPath);
     }
     
-    public static void main(String[] args) {
-        
-        try {
-            String source = "https://www.sample-videos.com/pdf/Sample-pdf-5mb.pdf";
-            String destination = "C:\\Users\\42194\\Desktop\\sample_pdf.pdf";
-            
-            DownloadManager objDownloadingManager = DownloadManager.getDownloadManager();
-            objDownloadingManager.download(source, destination);
-        } catch (IOException ex) {
-            Logger.getLogger(RecordManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+    private void save() throws IOException{
+        Serializer.serialize(this);
     }
+    
+    
     
 }

@@ -6,13 +6,9 @@
 package sk.stu.fiit.controllers;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import sk.stu.fiit.models.DownloadRecord;
+import sk.stu.fiit.exceptions.NotZipException;
 import sk.stu.fiit.models.RecordManager;
-import sk.stu.fiit.models.TableModelItem;
-import sk.stu.fiit.models.unzipping.Unzipper;
 
 /**
  *
@@ -22,19 +18,17 @@ public class RecordController implements CustomTableModel{
     
     private final RecordManager manager = RecordManager.getDownloadedManager();
     
-    public DefaultTableModel getDownloadRecords(){
-        return new DefaultTableModel(getTableData(this.manager.getDownloaded()), 
+    public DefaultTableModel getDownload(){
+        return new DefaultTableModel(getTableData(this.manager.getDownloadedModel()), 
                 new Object[]{"ID", "Dátum", "URL adresa", "Destinácia", "Status", "Veľkosť", "Trvanie"});
     }
     
     public DefaultTableModel getDownloadedZips() throws IOException{
-        List<TableModelItem> zipDownloads = new LinkedList<>();
-        for (DownloadRecord record : (List<DownloadRecord>) (Object) this.manager.getDownloaded()) {
-            if(Unzipper.isZip(record.getFilePath())){
-                zipDownloads.add(record);
-            }
-        }
-        return new DefaultTableModel(getTableData(zipDownloads), 
+        return new DefaultTableModel(getTableData(this.manager.getZipsModel()), 
                 new Object[]{"ID", "Dátum", "URL adresa", "Destinácia", "Status", "Veľkosť", "Trvanie"});
+    }
+    
+    public void unzipFile(int selectedZipIndex, String destinationPath) throws IOException, NotZipException{
+        this.manager.unzip(selectedZipIndex, destinationPath);
     }
 }

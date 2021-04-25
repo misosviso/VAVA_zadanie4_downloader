@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.util.LinkedList;
 import java.util.List;
+import javax.net.ssl.SSLHandshakeException;
 
 /**
  * Singleton class, which is holds information about all downloads
@@ -44,8 +45,9 @@ public class DownloadManager extends Thread implements Serializable{
      * @return 
      * @throws MalformedURLException
      * @throws IOException 
+     * @throws javax.net.ssl.SSLHandshakeException 
      */
-    public Downloader download(String urlString, String pathString) throws MalformedURLException, IOException{
+    public Downloader download(String urlString, String pathString) throws MalformedURLException, IOException, SSLHandshakeException{
         int ID = lastIndex++;
         Downloader objDownloader = new Downloader(ID, urlString, pathString);
         this.downloads.add(objDownloader);
